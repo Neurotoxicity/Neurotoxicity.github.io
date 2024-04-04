@@ -21,9 +21,10 @@
    float: left;
    width: 33.33%;
    margin-left: auto;
-  margin-right: auto;
-  
+  margin-right: auto; 
  }
+
+
  
  /* Clear floats after the columns */
  .row:after {
@@ -39,6 +40,110 @@
    }
  } 
 
+ .headimg{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 720px;
+  animation: blinker 6s linear infinite;
+      }
+
+      .headimg:hover{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 720px;
+    animation: shake 0.8s linear infinite;
+        }
+
+                  .headimgright{
+       float: right;
+  width: 225px;
+      }
+
+
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+      @keyframes blinker {
+  50% { opacity: 0.85; }
+}
+
+
+@keyframes marquee-rtl {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+@keyframes marquee-ltr {
+    0% {
+    transform: translate(-100%, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.marquee-rtl {
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 678px;
+      margin: 2px auto;
+      padding: 4px;
+	    text-align: center;
+}
+
+.marquee-rtl span {
+  display: inline-block;
+  width: max-content;
+  padding-left: 100%;
+  /* show the marquee just outside the paragraph */
+  will-change: transform;
+  animation: marquee-rtl 90s linear infinite;
+}
+
+.marquee-rtl span:hover {
+  animation-play-state: paused;
+}
+
+.marquee-ltr {
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 678px;
+      margin: 2px auto;
+      padding: 4px;
+	    text-align: center;
+}
+
+.marquee-ltr span {
+  display: inline-block;
+  width: max-content;
+  padding-left: 100%;
+  /* show the marquee just outside the paragraph */
+  will-change: transform;
+  animation: marquee-ltr 90s linear infinite;
+}
+
+.marquee-ltr span:hover {
+  animation-play-state: paused;
+}
 
  img {
   display: block;
@@ -84,40 +189,40 @@
       <p><h2>Finished Projects</h2>
 
         <p><a href="https://neurotoxicity.itch.io/image-parade">
-          <img src="portfolio.png" width= 100% height= auto>
+          <img src="portfolio.png" width= 80% height= auto class = "headimg">
           </a></p>
 
       <p></p>
       <p><a href="https://neurotoxicity.itch.io/tripleo">
-          <img src="oddoneout.png" width= 100% height= auto>
+          <img src="oddoneout.png" width= 80% height= auto class = "headimg">
           </a></p>
       <p></p>
       <p><a href="https://neurotoxicity.itch.io/enemyspotted1">
-        <img src="enemyspotted1.png" width= 100% height= auto>
+        <img src="enemyspotted1.png" width= 80% height= auto class = "headimg">
         </a></p>
       <p></p>
       <p><a href="https://neurotoxicity.itch.io/enemyspotted2">
-        <img src="enemyspotted2.png" width= 100% height= auto>
+        <img src="enemyspotted2.png" width= 60% height= auto class = "headimg">
         </a></p>
         <p></p>
         <p><a href="https://neurotoxicity.itch.io/heavenstench">
-          <img src="heavenstench.png" width= 100% height= auto>
+          <img src="heavenstench.png" width= 80% height= auto class = "headimg">
           </a></p>
       <p></p>
       <p><a href="https://neurotoxicity.itch.io/mhead">
-        <img src="machinehead.png" width= 100% height= auto>
+        <img src="machinehead.png" width= 80% height= auto class = "headimg">
         </a></p>
       <p></p>
       <p><a href="https://neurotoxicity.itch.io/cyclones-of-mars">
-        <img src="cyclones.png" width= 100% height= auto>
+        <img src="cyclones.png" width= 80% height= auto class = "headimg">
         </a></p>
       <p></p>
       <p><a href="https://neurotoxicity.itch.io/amenbreak">
-        <img src="amenbreak.png" width= 100% height= auto>
+        <img src="amenbreak.png" width= 80% height= auto class = "headimg">
         </a></p>
       <p></p>
       <p><a href="https://neurotoxicity.itch.io/five-kanyes">
-        <img src="kanyezine.png" width= 100% height= auto>
+        <img src="kanyezine.png" width= 80% height= auto class = "headimg">
         </a></p>
       <p></p>
       </div>
@@ -134,7 +239,10 @@
     
    
     
-    <img src="teddyknight.png" alt="Painted-style image of a person wearing a large mascot-head of a bear, a short yellow cloak with a design of a bee on it, and carrying a sword. It isn't particularly good." style="width:50%;height:auto;">
+    <img src="teddyknight.png" alt="Painted-style image of a person wearing a large mascot-head of a bear, a short yellow cloak with a design of a bee on it, and carrying a sword. It isn't particularly good." class = "headimg" style="width:50%;height:auto;">
+    
+
+
     
   </div>
   
