@@ -1,9 +1,18 @@
+
+
+#myDIV {
+   width: 300px;
+   height: 200px;
+   border: 1px solid black;
+   background-image: url('pattern.jpg');
+   background-position: top left;
+   animation: mymove 5s infinite;
+   background-size: 10%
+ }
+ 
 body {
 
-    background: #000000;
-      color: #00000;
-
-
+       
 
 
   }
