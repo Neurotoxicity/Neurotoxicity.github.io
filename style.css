@@ -5,8 +5,9 @@ body {
    
    background-image: url("pattern.jpg");
    background-position: top left;
-   animation: mymove 5s infinite;
+   animation: 5s infinite;
    background-size: 10%
+   
  }
  
   h1 {
