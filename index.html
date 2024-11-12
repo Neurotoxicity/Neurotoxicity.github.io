@@ -2,6 +2,8 @@
 <html>
 <head>
 
+ 
+
 
   <link rel="icon" href=“icon.png">
 
@@ -161,15 +163,57 @@
 }
 
 
-  </style>
 
+/*HELVETICASTANDARDCODE*/
+@import url("https://fonts.googleapis.com/css?family=Darumadrop One");
+@font-face {
+  font-family: "Darumadrop One";
+  src: url("{{ 'https://fonts.googleapis.com/css?family=Darumadrop+One' | file_url }}")
+    format(".woff2");
+}
+
+.wobbly-text-container {
+  font-size: 5em;
+  font-weight: 800;
+  font-family: "Darumadrop One", sans-serif;
+  color: #FFA500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wobbly-animation {
+  filter: url(#noise);
+}
+
+  
+</style>
+
+<script>
+window.console = window.console || function(t) {};
+</script>
 
 <link href="/style.css" rel="stylesheet" type="text/css" media="all">
     
  </head>
+
+ 
+
 <body>
-
-
+  
+  
+  <svg style="position: absolute; width: 0; height: 0;">
+    <filter id="noise">
+      <feturbulence id="noise-turbulence" type="fractalNoise" baseFrequency="0.01" numOctaves="1" seed="1" result="noise" />
+      <fedisplacementmap in="SourceGraphic" in2="noise" scale="15" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
+  
+  <div class="wobbly-animation">
+    <div class="wobbly-text-container">
+      <center>welcome to my website</center>
+    </div>
+  </div>
 
 
 
@@ -235,10 +279,7 @@
   <div class="column">
     
     <div class="center">
-      <h2>WELCOME 2 MY WEBSITE</h2>
     <p> my name is Calliope</p>
-    <p>I paint and write.</p>
-  
     <p> you can contact me at cal.neurotoxin@gmail.com </p>
     </div>
     
@@ -274,7 +315,7 @@
   <div class="column">
     <div class="center">
       <h2>Latest Paintings</h2>
-      <div style="overflow-y: scroll;background: rgb(39, 39, 39);height: 80vh; width: 100.00%">
+      <div style="overflow-y: scroll;background: rgb(39, 39, 39);height: 70vh; width: 100.00%">
     
         <img src="illo jpg.jpg">
         <p></p>
@@ -338,5 +379,21 @@
 </div>
 
 
+
 </body>
+
+<script>
+  /*HELVETICASTANDARDCODE*/
+const noiseTurbulence = document.getElementById("noise-turbulence");
+let seedValue = 1;
+
+setInterval(() => {
+  seedValue = Math.floor(Math.random() * 100);
+  if (prevSeedValue == seedValue) {
+    seedValue += 1;
+  }
+  noiseTurbulence.setAttribute("seed", seedValue);
+}, 200);
+prevSeedValue = seedValue;
+</script>
 </html>
