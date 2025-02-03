@@ -162,7 +162,37 @@
   text-align: center;
 }
 
+/*HELVETICASTANDARDCODE*/
+@import url("https://fonts.googleapis.com/css?family=Darumadrop One");
+@font-face {
+  font-family: "Darumadrop One";
+  src: url("{{ 'https://fonts.googleapis.com/css?family=Darumadrop+One' | file_url }}")
+    format(".woff2");
+}
 
+.wobbly-text-container {
+  font-size: 5em;
+  font-weight: 800;
+  font-family: "Darumadrop One", sans-serif;
+  color: #FFA500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wobbly-text-container-small {
+  font-size: 3em;
+  font-weight: 800;
+  font-family: "Darumadrop One", sans-serif;
+  color: #FFA500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wobbly-animation {
+  filter: url(#noise);
+}
   </style>
 
 
@@ -179,7 +209,12 @@
  </head>
 <body onload="zinechooser()">
 
-
+  <svg style="position: absolute; width: 0; height: 0;">
+    <filter id="noise">
+      <feturbulence id="noise-turbulence" type="fractalNoise" baseFrequency="0.01" numOctaves="1" seed="1" result="noise" />
+      <fedisplacementmap in="SourceGraphic" in2="noise" scale="15" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
 
   
   
@@ -187,7 +222,12 @@
 
 <div class="row">
   <div class="column">
-    <img src="banner image.png" style="height=5%">
+    <div class="wobbly-animation">
+      <div class="wobbly-text-container">
+        <img src="banner image.png">
+      </div>
+    </div>
+    
     <div class="center"; style="height: 90vh;">
     
     
@@ -233,7 +273,7 @@
       <input type="image" src="buttons/left.png" style="width:30%;height:auto;display:inline-block" class = "headimg" onClick="leftbutton()">
     <p>sometimes i make minizines. They're tiny tiny (physically)</p>
     <a href="index.html">
-      <img src="ickyisolated.png" class = "headimg" style="width:15%;height:auto;" draggable="true"/> </a>
+      <img src="muddypasito.png" class = "headimg" style="width:40%;height:auto;" draggable="true"/> </a>
     </div>
   </div>
   
@@ -248,6 +288,21 @@
 
 
 </body>
+
+<script>
+  /*HELVETICASTANDARDCODE*/
+const noiseTurbulence = document.getElementById("noise-turbulence");
+let seedValue = 1;
+
+setInterval(() => {
+  seedValue = Math.floor(Math.random() * 100);
+  if (prevSeedValue == seedValue) {
+    seedValue += 1;
+  }
+  noiseTurbulence.setAttribute("seed", seedValue);
+}, 200);
+prevSeedValue = seedValue;
+</script>
 
 <script>
   
