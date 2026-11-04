@@ -542,11 +542,14 @@ prestochango(youclicked)
         var I = document.getElementById("blogwrap");
         I.style.display = "flex";
 
-        
-       $.getJSON( "blog/1.json", function( data ) {
-        var tempstr;
+         document.getElementById("bloghere").innerHTML = "<div style= "margin-top: 20%"></div>"
+       
+         document.getElementById("bloghere").innerText += "wagageafsawedaesdawesd"
+        $.getJSON( "blog/1.json", function( data ) {
+       
+          var tempstr;
         tempstr = data.title;
-        document.getElementById("bloghere").innerText = tempstr
+        document.getElementById("bloghere").innerText += "wagageafsawedaesdawesd"
         
         });
 
