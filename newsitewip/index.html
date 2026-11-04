@@ -547,7 +547,8 @@ prestochango(youclicked)
          
         $.getJSON( "blog/1.json", function( data ) {
                 
-                document.getElementById("bloghere").innerText += data.text()
+                $('#bloghere').append('newtext')
+                $('#bloghere').append(data)
         
         });
 
