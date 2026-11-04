@@ -486,7 +486,7 @@ window.console = window.console || function(t) {};
 <script>
 function World(){
   const xhr = new XMLHttpRequest;
-  xhr.open('POST', 'blog/1.txt'); // change url accordingly
+  xhr.open('POST', 'https://neurotoxicity.github.io/newsitewip/blog/1.txt'); // change url accordingly
   xhr.onload = resp=>{
     document.getElementById('bloghere').textContent = resp.responseText;
   }
