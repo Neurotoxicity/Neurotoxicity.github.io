@@ -543,9 +543,11 @@ prestochango(youclicked)
         I.style.display = "flex";
 
         
-       $.get( "blog/1.txt", function( data ) {
-        $( ".result" ).html( data );
-        alert( "Load was performed." );
+       $.getJSON( "blog/1.json", function( data ) {
+        var tempstr;
+        tempstr = data.title;
+        document.getElementById("bloghere").innerText = tempstr
+        
         });
 
         
