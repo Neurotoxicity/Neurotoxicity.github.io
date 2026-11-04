@@ -593,12 +593,9 @@ prestochango(youclicked)
          
        
          
-        fetch('blog/2.txt')
-                  
-                  .then((data) => {
-                    console.log("running")
-                  document.getElementById('bloghere').innertext = data;
-                    });
+        fetch('blog/1.txt')
+       .then(data => data.text()).then((data) =>
+       document.getElementById('bloghere').innerText = data)}
         
 
 
