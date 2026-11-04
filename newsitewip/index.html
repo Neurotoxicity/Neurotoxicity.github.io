@@ -609,9 +609,11 @@ prestochango(youclicked)
        
         fetchblogfiles();
 
-        fetch('head.txt')
+        fetch('blog/head.txt')
        .then(data => data.text()).then((data) =>
        document.getElementById('bloghere').innerHTML = data)
+
+       
         
 
 
