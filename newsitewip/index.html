@@ -554,16 +554,7 @@ function fullsizer(clicked){
 
 }
 
-  var blogfiles = "";
-
-  function fetchblogfiles(){ 
-    $(document).ready(function () 
-    {
-        $.get("blog/", function(data) 
-        {
-            $("#bloglist").append(data);
-        });
-    })}
+ 
 
 
 
@@ -607,7 +598,15 @@ prestochango(youclicked)
 
          
        
-        fetchblogfiles();
+         $(document).ready(function () 
+    {
+        $.get("blog/", function(data) 
+        {
+            $("#bloglist").append(data);
+            var blogfiles = data;
+            console.log(blogfiles)
+        });
+    })
 
         fetch('blog/head.txt')
        .then(data => data.text()).then((data) =>
