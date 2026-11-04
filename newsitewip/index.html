@@ -352,7 +352,7 @@ window.console = window.console || function(t) {};
 
  
 
-<body onload="World()">
+<body>
   
   <svg style="position: absolute; width: 0; height: 0;">
     <filter id="noise">
@@ -436,9 +436,7 @@ window.console = window.console || function(t) {};
         <div class = "blogviewmiddle">
           <!--<embed src="blog/1.txt" id="bloghere" style="overflow-y: scroll; -ms-overflow-style: none; white-space: pre; scrollbar-width: none;height: 100%; width: 90.00%; margin-left:5%"> -->
 
-          <div id="bloghere" style="overflow-y: scroll; -ms-overflow-style: none; white-space: pre; scrollbar-width: none;height: 100%; width: 60.00%; margin-left:20%">
-            blog content did not load
-            </div>
+          <div id="bloghere" style="overflow-y: scroll; -ms-overflow-style: none; white-space: pre; scrollbar-width: none;height: 100%; width: 60.00%; margin-left:20%">blog content goes here</div>
           
         </div>
         <div class = "blogviewright">
@@ -484,18 +482,10 @@ window.console = window.console || function(t) {};
 
 
 <script>
-function World(){
-  const fs = require('node:fs');
 
-fs.readFile('/blog/1.txt', 'utf8', (err, data) => {
-  if (err) {
-    console.error(err);
-    return;
+  function populateblog(){
+    
   }
-  console.log(data);
-});
-}
-
 
   function hide() {
             document.getElementById("gallerywrap").style.display = "none";
@@ -536,8 +526,10 @@ prestochango(youclicked)
         var I = document.getElementById("blogwrap");
         I.style.display = "flex";
 
-        World()
-
+        
+        xhttp.open("GET", "blog/1.txt", false);
+        xhttp.send();
+        document.getElementById("bloghere").innerHTML = xhttp.responseText; 
        
 
 
