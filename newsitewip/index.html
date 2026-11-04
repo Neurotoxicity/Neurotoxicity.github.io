@@ -526,11 +526,12 @@ prestochango(youclicked)
       var text = new XMLHttpRequest();
       text.open('GET', 'blog/1.txt');
       text.onreadystatechange = function() {
-        alert(text.responseText); }
+        }
+      document.getelementbyID("bloghere").innertext = text;
       text.send();
 
 
-       document.getelementbyID("bloghere").innertext = text
+       
 
 
         
