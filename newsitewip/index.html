@@ -2,11 +2,7 @@
 <html>
 <head>
 <script src="js/jquery-4.0.0.min.js"></script>
-<script>
-$(document).ready(function(){
-    alert("jQuery Works")
-});
-</script>
+
  
 
 
@@ -536,11 +532,10 @@ prestochango(youclicked)
         I.style.display = "flex";
 
         
-        xhttp.open("GET", "blog/1.txt", false);
-        xhttp.send();
-        document.getElementById("bloghere").innerHTML = xhttp.responseText; 
-       
-
+       $.get( "blog/1.txt", function( data ) {
+        $( ".result" ).html( data );
+        alert( "Load was performed." );
+        });
 
         
 
