@@ -22,16 +22,18 @@
 
 
 body {
+  
   background-color: white;
   background-image: none;
   position: fixed;
-  padding:0.5%;}
+ }
   
     /* the left hand navigation box*/
 .leftcolumn {
   float: left;
   width: 20vw;
   height: 100%;
+  margin-left: 0px;
   border-right:2px solid black;
   
  }
@@ -94,7 +96,7 @@ body {
     margin: 1%;
     border-radius: 25px;
     object-fit: cover;
-    display: block
+    display: block;
  }
 
 .galleryviewfullsizemiddle{
@@ -103,7 +105,7 @@ body {
   flex: 0 0 65vw;
  }
  .galleryviewfullsizeright{
-  width: 5vw;
+  width: 4vw;
   margin-left:1%;
   font-size: 4vw;
   flex: auto;
@@ -375,7 +377,7 @@ button:focus {
 
  
 
-<body>
+<body style = "font-family: 'Courier New', monospace">
   
   <svg style="position: absolute; width: 0; height: 0;">
     <filter id="noise">
@@ -457,7 +459,7 @@ button:focus {
       <div class = "galleryviewfullsizemiddle" style= "overflow-y:scroll; scrollbar-width: none;">
         <div><img id= "fullsizeimg" src="" ></div>
       </div>
-      <div class = "galleryviewfullsizeright">Fullsize <p style="font-size:0.4em;"onClick="prestochango(current)">(return)</p> </div>
+      <div class = "galleryviewfullsizeright" style = "word-break: break-all">Fullsize <p style="font-size:0.4em;"onClick="prestochango(current)">(return)</p> </div>
       
       </div>
 
@@ -551,6 +553,18 @@ function fullsizer(clicked){
         I.style.display = "flex";
 
 }
+
+<script type="text/javascript">
+  function fetchblogfiles(){ 
+    $(document).ready(function () 
+    {
+        $.get("blog/", function(data) 
+        {
+            $("#bloglist").append(data);
+        });
+    })}
+   
+</script>
 
 function buttonchoice(choice){
   const buttonoptions = ["Illustration", "Character_Art", "Environment_Art", "Prop_Art", "Pixel_Art", "blog", "about"]
