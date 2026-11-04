@@ -546,10 +546,11 @@ prestochango(youclicked)
          
        
          
-        $.getJSON( "blog/1.json", function( data ) {
-                
-                $('#bloghere').append('newtext')
-                $('#bloghere').append(data)
+        fetch('blog/1.json')
+                  .then((response) => response.json())
+                  .then((data) => {
+                  document.getElementById('bloghere').innerHTML = data.message;
+                    });
         
         });
 
