@@ -554,7 +554,8 @@ function fullsizer(clicked){
 
 }
 
-<script type="text/javascript">
+  var blogfiles = "";
+
   function fetchblogfiles(){ 
     $(document).ready(function () 
     {
@@ -564,8 +565,6 @@ function fullsizer(clicked){
         });
     })}
    
-</script>
-
 function buttonchoice(choice){
   const buttonoptions = ["Illustration", "Character_Art", "Environment_Art", "Prop_Art", "Pixel_Art", "blog", "about"]
 let youclicked = buttonoptions[choice-1]
@@ -606,7 +605,8 @@ prestochango(youclicked)
 
          
        
-         
+        fetchblogfiles();
+
         fetch('blog/1.txt')
        .then(data => data.text()).then((data) =>
        document.getElementById('bloghere').innerText = data)
