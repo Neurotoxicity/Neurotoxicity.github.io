@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ 
+
+
+  <link rel="icon" href="icon.png">
+
+
+   <meta charset="UTF-8">
+
+
+   <title>Neurotoxin Sommelier</title>
+
+
+   
+
+  <style>
+
+body {
+  position: fixed;
+  padding:0.5%;}
+  
+    /* the left hand navigation box*/
+.leftcolumn {
+  float: left;
+  width: 20vw;
+  height: 100%;
+  border-right:2px solid black;
+  
+ }
+ /* denotes the part of the screen that isnt the navigation box*/
+.rightchunk {
+  float: left;
+  width: 60vw;
+  height: 100%;
+ }
+
+  .navibox {
+  float: left;
+  width: 100%;
+  height: 40vh;
+  
+   
+  border-bottom:2px solid black; 
+ }
+
+ .blogcolumn {
+  float: left;
+  width: 100%;
+  height: 55vh;
+
+ }
+
+
+ .gallerywrap {
+  float: left;
+  width: 100%;
+  height: 100%;
+  display:none;
+  position: absolute;
+  
+  
+ }
+ /*placed inside rightchunk*/
+ .galleryviewtitlecontainer {
+  float: left;
+  width: 100%;
+  height: 40vh;
+  border-bottom:2px solid black; 
+  display: table-cell;
+  position: relative;
+  font-size: 4em
+ }
+ .galleryviewpicturecontainer {
+  float: left;
+  width: 100%;
+  height: 60vh;
+  
+
+ }
+ /*for the scrolling image thumbnails. place inside galleryviewpicturecontainer*/
+ .imagecard img{
+    float: left;
+    width: 15vw;
+    height: 25vh;
+    margin: 1%;
+    border-radius: 25px;
+    object-fit: cover;
+ }
+
+ .galleryviewfullsizemiddle{
+  width:65%;
+ }
+ .galleryviewfullsizeright{
+  width:10%;
+ }
+
+.blogwrap {
+  float: left;
+  width: 100%;
+  height: 100%;
+  display:none;
+  position: absolute;
+  
+ }
+ .blogviewmiddle{
+  width:50vw;
+  border-right:2px solid black; 
+  flex: 0 0 50vw;
+ }
+ .blogviewright{
+  width: 15vw;
+  
+  flex: auto;
+ }
+
+#aboutwrap {
+  float: left;
+  width: 100%;
+  height: 100%;
+  display:none;
+  position: absolute;
+ }
+ .aboutpagetop{
+  height:45vh;
+  border-bottom:2px solid black; 
+ }
+ .aboutpagemiddle{
+  height:30vh;
+  border-bottom:2px solid black; 
+ }
+ .aboutpagebottom{
+  height:25vh;
+  font-size: 20vh;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden; 
+  
+ }
+
+
+
+
+
+ 
+ /* Clear floats after the columns */
+ .row:after {
+   content: "";
+   display: table;
+   clear: both;
+ }
+ 
+ /* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
+ @media screen and (max-width: 600px) {
+   .column {
+     width: 100%;
+   }
+ } 
+
+ .headimg{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 720px;
+  animation: blinker 6s linear infinite;
+      }
+
+      .headimg:hover{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 720px;
+    animation: shake 0.8s linear infinite;
+        }
+
+                  .headimgright{
+       float: right;
+  width: 225px;
+      }
+
+
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+      @keyframes blinker {
+  50% { opacity: 0.85; }
+}
+
+
+@keyframes marquee-rtl {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+@keyframes marquee-ltr {
+    0% {
+    transform: translate(-100%, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.marquee-rtl {
+  /* overflow: hidden;*/ 
+  box-sizing: border-box;
+  width: 678px;
+      margin: 2px auto;
+      padding: 4px;
+	    text-align: center;
+}
+
+.marquee-rtl span {
+  display: inline-block;
+  width: max-content;
+  padding-left: 100%;
+  /* show the marquee just outside the paragraph */
+  will-change: transform;
+  animation: marquee-rtl 90s linear infinite;
+}
+
+.marquee-rtl span:hover {
+  animation-play-state: paused;
+}
+
+.marquee-ltr {
+  /* overflow: hidden; */
+  box-sizing: border-box;
+  width: 678px;
+      margin: 2px auto;
+      padding: 4px;
+	    text-align: center;
+}
+
+.marquee-ltr span {
+  display: inline-block;
+  width: max-content;
+  padding-left: 100%;
+  /* show the marquee just outside the paragraph */
+  will-change: transform;
+  animation: marquee-ltr 90s linear infinite;
+}
+
+.marquee-ltr span:hover {
+  animation-play-state: paused;
+}
+
+ img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+  max-width: 100%;
+  height: auto;
+    }
+
+.center {
+  text-align: center;
+}
+
+
+
+/*HELVETICASTANDARDCODE*/
+@import url("https://fonts.googleapis.com/css?family=Darumadrop One");
+@font-face {
+  font-family: "Darumadrop One";
+  src: url("{{ 'https://fonts.googleapis.com/css?family=Darumadrop+One' | file_url }}")
+    format(".woff2");
+}
+
+.wobbly-text-container {
+  font-size: 5em;
+  font-weight: 800;
+  font-family: "Darumadrop One", sans-serif;
+  color: #FFA500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wobbly-text-container-small {
+  font-size: 3em;
+  font-weight: 800;
+  font-family: "Darumadrop One", sans-serif;
+  color: #FFA500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wobbly-animation {
+  filter: url(#noise);
+}
+
+
+
+button {
+  padding: 2px;
+  height: 10%;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  overflow:hidden;
+  max-width: 100%;
+}
+
+button:focus {
+  outline: 0;
+}
+
+
+.button-three {
+  background-color: #828286;
+  text-align: justify;
+  font-size: 1em;
+  display: block
+  
+  
+}
+</style>
+
+<script>
+window.console = window.console || function(t) {};
+</script>
+
+<link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    
+ </head>
+
+ 
+
+<body>
+  
+  <svg style="position: absolute; width: 0; height: 0;">
+    <filter id="noise">
+      <feturbulence id="noise-turbulence" type="fractalNoise" baseFrequency="0.01" numOctaves="1" seed="1" result="noise" />
+      <fedisplacementmap in="SourceGraphic" in2="noise" scale="15" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
+  
+  
+
+
+
+<!-- this is the lefthand column that doesnt change -->
+  <div class="leftcolumn">
+      <div class="navibox">
+          <img  src="logos/sommwhite.png" style="height: 40%">
+        <div style="width:60%; margin-left: 20%">
+        
+        <button class="button-three" onClick="buttonchoice(1)">ILLUSTRATION</button>
+        <button class="button-three" onClick="buttonchoice(2)">CHARACTER ART</button>
+        <button class="button-three" onClick="buttonchoice(3)">BACKGROUNDS</button>
+        <button class="button-three" onClick="buttonchoice(4)">PROPS</button>
+        <button class="button-three" onClick="buttonchoice(5)">PIXEL ART</button> 
+        <button class="button-three" onClick="buttonchoice(6)">BLOG</button> 
+        <button class="button-three" onClick="buttonchoice(7)">ABOUT//CONTACT</button> 
+        </div>
+
+        
+        
+        <br><br><br>
+      </div>
+
+    <div class="blogcolumn">
+    <br><br><br>
+        <div style="width:60%; margin-left: 20%">
+        <p>Calliope Parsch is a Melbourne-based illustrator<br>
+            </p>
+ 
+        </div>
+
+        <br><br><br>
+        <div class=center> <p>blog</p></div>
+        <div style="overflow-y: scroll;background: rgb(95, 95, 95);height: 50%; width: 60.00%;  margin: auto;">
+            <p>blog</p>
+            <p>goes</p>
+            <p>here</p>
+    
+        </div>
+    </div>
+  </div>
+
+  
+  
+  <div class="rightchunk"> 
+    <!-- what displays in here needs to change depending on which navigation button is pressed-->
+
+    <div class = "gallerywrap" id="gallerywrap">
+      <div class = "galleryviewtitlecontainer">
+         <div id="gallerytitle" style="position: absolute; bottom: 0; left: 0; margin-bottom: 1%; margin-left: 2%">
+        No_Gallery_Selected
+      </div>
+    </div>
+      
+      <div class = "galleryviewpicturecontainer">
+        <div class = "imagecard"><img   id = "img1" src=""></div>
+        <div class = "imagecard"><img   id = "img2" src=""></div>
+        <div class = "imagecard"><img   id = "img3" src=""></div>
+        <div class = "imagecard"><img   id = "img4" src=""></div>
+        <div class = "imagecard"><img   id = "img5" src=""></div>
+        <div class = "imagecard"><img   id = "img6" src=""></div>
+        <div class = "imagecard"><img   id = "img7" src=""></div>
+        <div class = "imagecard"><img   id = "img8" src=""></div>
+
+      </div>
+      </div>
+
+
+
+
+      <div class = "blogwrap" id="blogwrap">
+        <div class = "blogviewmiddle">
+          <!--<embed src="blog/1.txt" id="bloghere" style="overflow-y: scroll; -ms-overflow-style: none; white-space: pre; scrollbar-width: none;height: 100%; width: 90.00%; margin-left:5%"> -->
+
+          <div id="bloghere" style="overflow-y: scroll; -ms-overflow-style: none; white-space: pre; scrollbar-width: none;height: 100%; width: 60.00%; margin-left:20%">
+
+                
+                
+            </div>
+          
+        </div>
+        <div class = "blogviewright">
+          <p style ="margin-left:1%; font-size: 10vw;">Blog</p>
+        </div>
+
+      </div>
+
+
+
+      <div class = "aboutwrap" id="aboutwrap">
+        <div class = "aboutpagetop"></div>
+        <div class = "aboutpagemiddle">
+          <div><p> Environment Artist <br> Putrid//Sharp </p></div>
+          <div><p> Pixel Artist <br> Creature.Love </p></div>
+
+
+        </div>
+        <div class = "aboutpagebottom">
+
+          <div id="gallerytitle" style="position: absolute; bottom: 0; left: 0; margin-bottom: 1%; margin-left: 2%">
+          About//Contact
+      </div>
+        </div>
+      </div>
+
+
+    </div>
+    
+
+
+
+  </div>
+
+
+
+  
+  
+
+
+
+</body>
+
+
+<script>
+  function hide() {
+            document.getElementById("gallerywrap").style.display = "none";
+            
+        }
+  
+
+function buttonchoice(choice){
+  const buttonoptions = ["Illustration", "Character_Art", "Environment_Art", "Prop_Art", "Pixel_Art", "blog", "about"]
+let youclicked = buttonoptions[choice-1]
+prestochango(youclicked)
+}
+
+  function prestochango(chose){
+    if (chose === "NA"){
+        var T = document.getElementById("gallerywrap");
+        T.style.display = "none";
+        var H = document.getElementById("blogwrap");
+        H.style.display = "none";
+        var I = document.getElementById("aboutwrap");
+        I.style.display = "none";
+
+    }
+    else if (chose === "about"){ 
+        var T = document.getElementById("gallerywrap");
+        T.style.display = "none";
+        var H = document.getElementById("blogwrap");
+        H.style.display = "none";
+        var I = document.getElementById("aboutwrap");
+        I.style.display = "block";
+
+    }
+    else if (chose==="blog"){ 
+        var T = document.getElementById("gallerywrap");
+        T.style.display = "none";
+        var H = document.getElementById("aboutwrap");
+        H.style.display = "none";
+        var I = document.getElementById("blogwrap");
+        I.style.display = "flex";
+
+      var text = new XMLHttpRequest();
+      text.open('GET', 'blog/1.txt');
+      text.onreadystatechange = function() {
+        alert(text.responseText); }
+      text.send();
+
+
+       document.getelementbyID("bloghere").innertext = text
+
+
+        
+
+    }
+    
+  
+    else{
+        var H = document.getElementById("aboutwrap");
+        H.style.display = "none";
+        var I = document.getElementById("blogwrap");
+        I.style.display = "none";
+        var T = document.getElementById("gallerywrap");
+        T.style.display = "block";
+
+        document.getElementById("gallerytitle").innerText = chose
+
+        let filepath = (("thumbs/".concat(chose)).concat("/"))
+
+        for (let i = 1; i < 9; i++){
+          let temp = ("img".concat(i))
+          let target = document.getElementById(temp)
+          target.src = ((filepath).concat(i)).concat(".jpg")
+        }
+
+    }
+
+    }
+
+
+  /*HELVETICASTANDARDCODE*/
+const noiseTurbulence = document.getElementById("noise-turbulence");
+let seedValue = 1;
+
+setInterval(() => {
+  seedValue = Math.floor(Math.random() * 100);
+  if (prevSeedValue == seedValue) {
+    seedValue += 1;
+  }
+  noiseTurbulence.setAttribute("seed", seedValue);
+}, 200);
+prevSeedValue = seedValue;
+</script>
+
+
+
+</html>
