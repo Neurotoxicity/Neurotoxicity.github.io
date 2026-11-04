@@ -2,7 +2,7 @@
 <html>
 <head>
 <script src="js/jquery-4.0.0.min.js"></script>
-<link id="first_style" rel="stylesheet" href="#" disabled />
+
  
 
 
@@ -348,7 +348,7 @@ button:focus {
 
 
 .button-three {
-  background-color: #828286;
+  background-color: #cccccc;
   text-align: justify;
   font-size: 1em;
   display: block
@@ -361,9 +361,6 @@ button:focus {
 
 
 
-
-
-<link href="/style.css" rel="stylesheet" type="text/css" media="all">
     
  </head>
 
@@ -412,7 +409,7 @@ button:focus {
 
         <br><br><br>
         <div class=center> <p>Latest Updates</p></div>
-        <div id="bloglist" style="overflow-y: scroll;background: rgb(95, 95, 95);height: 50%; width: 60.00%;  margin: auto;">
+        <div id="bloglist" style="overflow-y: scroll;background: rgb(209, 208, 208);height: 50%; scrollbar-width: none; width: 60.00%;  margin: auto;">
             <p>blog</p>
             <p>goes</p>
             <p>here</p>
@@ -533,14 +530,15 @@ var current = "NA"
 function fullsizer(clicked){
   var T = document.getElementById("gallerywrap");
         T.style.display = "none";
-  var I = document.getElementById("galleryfullsizewrap");
-        I.style.display = "flex";
+  
 
   let filepath = (((("fullsize/").concat(current)).concat("/")).concat(clicked)).concat(".jpg")
 
   let target = document.getElementById("fullsizeimg")
   target.src = filepath
-
+  
+  var I = document.getElementById("galleryfullsizewrap");
+        I.style.display = "flex";
 
 }
 
