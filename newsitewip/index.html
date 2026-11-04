@@ -442,7 +442,8 @@ button:focus {
           <!--<embed src="blog/1.txt" id="bloghere" style="overflow-y: scroll; -ms-overflow-style: none; white-space: pre; scrollbar-width: none;height: 100%; width: 90.00%; margin-left:5%"> -->
 
           <div id="bloghere" style="overflow-y: scroll; -ms-overflow-style: none; white-space: pre; scrollbar-width: none;height: 100%; width: 60.00%; margin-left:20%">blog content goes here</div>
-          
+          <button type="button" onclick="loadDoc()">Request data</button>
+          <p id="demo"></p>
         </div>
         <div class = "blogviewright">
           <p style ="margin-left:1%; font-size: 10vw;">Blog</p>
@@ -485,6 +486,16 @@ button:focus {
 
 </body>
 
+<script>
+function loadDoc() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("demo").innerHTML = this.responseText;
+  }
+  xhttp.open("GET", "blog/1.txt");
+  xhttp.send();
+}
+</script>
 
 <script>
 
