@@ -549,7 +549,7 @@ prestochango(youclicked)
         fetch('blog/1.json')
                   .then((response) => response.json())
                   .then((data) => {
-                  document.getElementById('bloghere').innerHTML = data.message;
+                  document.getElementById('bloghere').innertext = data.message;
                     });
         
 
