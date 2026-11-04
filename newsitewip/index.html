@@ -484,6 +484,16 @@ window.console = window.console || function(t) {};
 
 
 <script>
+function World(){
+  const xhr = new XMLHttpRequest;
+  xhr.open('POST', 'blog/1.txt'); // change url accordingly
+  xhr.onload = resp=>{
+    document.getElementById('bloghere').textContent = resp.responseText;
+  }
+  xhr.send();
+}
+
+
   function hide() {
             document.getElementById("gallerywrap").style.display = "none";
             
@@ -523,13 +533,7 @@ prestochango(youclicked)
         var I = document.getElementById("blogwrap");
         I.style.display = "flex";
 
-      var text = new XMLHttpRequest();
-      text.open('GET', 'blog/1.txt');
-      text.onreadystatechange = function() {
-        }
-      document.getelementbyID("bloghere").innertext = text;
-      text.send();
-
+        world()
 
        
 
