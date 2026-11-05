@@ -502,7 +502,7 @@ button:focus {
         </div>
         <div class = "blogviewright">
           <div style ="margin-left:1%; font-size: 10vw;">Blog</div>
-           <div id="bloglist" style="overflow-y:scroll; word-break: break-all; -ms-overflow-style: none; white-space: pre-wrap; scrollbar-width: none;height: 100%; width: 80.00%; margin-left:10%">list of posts</div>
+           <div id="bloglist2" style="overflow-y:scroll; word-break: break-all; -ms-overflow-style: none; white-space: pre-wrap; scrollbar-width: none;height: 100%; width: 80.00%; margin-left:5%">list of posts</div>
         </div>
 
       </div>
@@ -558,11 +558,12 @@ $(window).on('load', function(){
     for (let  i = (blogpostno); i > 0; i--){
           var target = ("public/blog/".concat(i)).concat(".txt");
           $.get(target, function(data){
-            alert("data: "+ data + "\nStatus: " + status);
+            // alert("data: "+ data + "\nStatus: " + status);
             var post = data.split("\n");   // split all lines into array
             var posttitle = post.shift();   // read and remove first line
             var postdate = post.shift();
             $("#bloglist").append("<li>" + postdate + posttitle + "</li>");
+            $("#bloglist2").append("<li>" + postdate + posttitle + "</li>");
 
             $("#bloghere").append(posttitle);
             $("#bloghere").append(postdate);
