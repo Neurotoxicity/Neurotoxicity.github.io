@@ -541,7 +541,7 @@ button:focus {
 $(window).on('load', function(){
 $(document).ready(function(){   
 
-        $.get("blog/", function(data){
+        $.get("blog/1.txt", function(data){
             alert("data: "+ data + "\nStatus: " + status);
             $("#bloglist").append(data);
         });
