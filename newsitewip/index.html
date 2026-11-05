@@ -550,7 +550,7 @@ $(window).on('load', function(){
        document.getElementById('bloghere').innerHTML = data)
 
     for (let  i = (blogpostno); i > 0; i--){
-          var target = ("/blog/".concat(i)).concat(".txt");
+          var target = ("public/blog/".concat(i)).concat(".txt");
           $.get(target, function(data){
             alert("data: "+ data + "\nStatus: " + status);
             var post = data.split("\n");   // split all lines into array
