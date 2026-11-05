@@ -1,3 +1,4 @@
-What is Lorem Ipsum?
-[1,1,2026]
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.
+New Website!
+[5-11-2026]
+I've been procrastinating on making a new website basically ever since I made the old one... But I finally got around to it! Finally!!!!!!! Got a custom domain name too and everything... It's looking a little bit serious around here, now...
+There's so much jank I have to fix still, but it looks more professional than the old one, hopefully...

@@ -200,7 +200,17 @@ body {
   
  }
 
+.scrollingcontainer{
 
+ 
+  position:absolute;
+    /**used to scroll text*/
+    white-space: nowrap;    
+    overflow: hidden;
+}
+.scrollingcontainer span {
+  animation: scrollingcontainer 5s linear infinite;
+}
 
 
 
@@ -464,6 +474,9 @@ button:focus {
 
     <div class = "gallerywrap" id="gallerywrap">
       <div class = "galleryviewtitlecontainer">
+        <div class = "scrollingcontainer"> 
+          <span id="galleryascii"></span>
+        </div>
          <div id="gallerytitle" style="position: absolute; bottom: 0; left: 0; margin-bottom: 1%; margin-left: 2%">
         No_Gallery_Selected
       </div>
@@ -487,7 +500,7 @@ button:focus {
         <div><img id= "fullsizeimg" src="" ></div>
         <div id="addendaimg"></div>
       </div>
-      <div class = "galleryviewfullsizeright"><div style="font-size: 8em; line-height: 0.7; word-break: break-all;">Fullsize</div><div id="deschere"  style = "word-break: break-word">img desc</div><div style="font-size:2em;"onClick="prestochango(current)">(return)</div></div>
+      <div class = "galleryviewfullsizeright"><div style="font-size: 8em; line-height: 0.7; word-break: break-all;">Fullsize</div><div id="deschere"  style = "word-break: break-word">img desc</div><div style="font-size:2em; bottom:0"onClick="prestochango(current)">(return)</div></div>
       
       </div>
 
@@ -689,8 +702,11 @@ current = youclicked;
         J.style.display = "none";
 
         document.getElementById("gallerytitle").innerText = chose
-
-        let filepath = (("thumbs/".concat(chose)).concat("/"))
+        
+        
+        fetch("logos/ascii.txt").then(data => data.text()).then((data) =>
+          document.getElementById("galleryascii").innerText = data)
+          
 
         for (let i = 1; i < 9; i++){
           let temp = ("img".concat(i))
