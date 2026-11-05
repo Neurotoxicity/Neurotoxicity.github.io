@@ -541,13 +541,12 @@ button:focus {
 $(window).load(function(){
 $(document).ready(function(){   
 
-        $.get("blog/", function(data) 
-        {
-            $("#bloglist").append(data);
-            console.log(data);
+        $.get("blog/", function(data){
+            alert("data: "+ data + "\nStatus: " + status);
         });
     });
   });
+  
 </script>
 
 <script>
