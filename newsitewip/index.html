@@ -451,7 +451,7 @@ button:focus {
         </div>
 
         <br><br><br>
-        <div class=center> <p>Latest Updates</p></div>
+        <div class=center>Latest Updates</div>
         <div class = "blogpostslist" id="bloglist"></div>
     </div>
     <div>website by Calliope Parsch</div>
@@ -513,7 +513,7 @@ button:focus {
       <div class = "aboutwrap" id="aboutwrap">
         <div class = "aboutpagetop"></div>
         <div class = "aboutpagemiddle">
-          <div class = "aboutjobs" style="margin-left:2%"> <h1>Calliope Parsch</h1><h2>cal.neurotoxin@gmail.com</h2><br>Clients: Rubeki Games, Only By Midnight, Creature.Love, Putrid//Sharp</div>
+          <div class = "aboutjobs" style="margin-left:2%"> <h1>Calliope Parsch</h1><div  onclick="mailto(cal.neurotoxin@gmail.com)"><h2>cal.neurotoxin@gmail.com</h2></div><br>Past Clients: Rubeki Games, Only By Midnight, Creature.Love, Putrid//Sharp</div>
           
           <div class = "aboutjobs"><img class="aboutjobsgif" src="logos/running for website.gif"><div class="aboutjobstitle">Concept / Pixel artist</div><br><div onclick="window.open('https://creature.love/')"> Creature.Love</div><br> feb2026-current</div>
           <div class = "aboutjobs"><img class="aboutjobsgif" src="logos/squirmer.gif"><div class="aboutjobstitle">Environment / Pixel artist</div><br><div onclick="window.open('https://putridsharp.cargo.site/')"> Putrid/Sharp</div><br> jan2026-current</div>
@@ -565,7 +565,7 @@ $(window).on('load', function(){
             var posttitle = post.shift();   // read and remove first line
             var postdate = post.shift();
 
-            var temptitle = "<li style = 'list-style-type:none; margin-left:30%; text-indent:-30%'>" + postdate + posttitle + "</li>"
+            var temptitle = "<li style = 'list-style-type:none; margin-left:40%; text-indent:-40%'>" + postdate + posttitle + "</li>"
             $("#bloglist").append(temptitle);
             $("#bloglist2").append(temptitle);
 
