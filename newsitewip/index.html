@@ -539,12 +539,27 @@ button:focus {
 
 <script type="text/javascript">
 $(window).on('load', function(){
-$(document).ready(function(){   
+  var fileExt = ".txt";    
+  $(document).ready(function(){   
+            $.ajax({
+                  url: "blog/"
+                  success: function(data){
+                    console.log(data);
+                    $("#bloglist").html('<ul>');
+                    
+                    $(data).find("a:contains(" + fileExt + ")").each(function(){
+                      $("#bloglist").append('<li>'+$(this).text()+'<li>');
+                    });
+                    $("#bloglist").append('</ul>');
+                  }
+            });
 
-        $.get("/blog/", function(data){
+
+
+        /* $.get("/blog/", function(data){
             alert("data: "+ data + "\nStatus: " + status);
             $("#bloglist").append(data);
-        });
+        });*/
     });
   });
   
