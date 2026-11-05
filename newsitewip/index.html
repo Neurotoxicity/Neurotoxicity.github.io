@@ -166,7 +166,9 @@ body {
 .aboutjobsgif{
   image-rendering: pixelated;
   height:60%; 
-  margin-right:5%; 
+  margin-right:5%;
+  margin-top: 1%;
+  margin-bottom: 1%;
   display:block;  
   float:right;
 }
@@ -512,7 +514,7 @@ button:focus {
         </div>
         <div class = "aboutpagebottom">
 
-          <div id="gallerytitle" style="position: absolute; bottom: 0; left: 0; margin-bottom: 0%; margin-top: 1%; margin-left: 2%">
+          <div id="gallerytitle" style="position: absolute; bottom: 0; left: 0; margin-bottom: 0%; margin-top: 1%; margin-left: 2%; margin-right:5%;">
           About//Contact
       </div>
         </div>
@@ -539,15 +541,16 @@ button:focus {
 
 <script>
 var current = "NA"
-
+$(window).load(function(){
 $(document).ready(function(){   
 
         $.get("blog/", function(data) 
         {
-            $("#bloglist").innertext += data;
+            $("#bloglist").append(data);
             console.log(data)
         });
-    })
+    });
+  });
 
 
 
@@ -568,6 +571,7 @@ function fullsizer(clicked){
   
 
   let filepath = (((("fullsize/").concat(current)).concat("/")).concat(clicked)).concat(".jpg")
+  let addendapath = (("fullsize/addenda/").concat(current)).concat("/")
   let descpath = (((("fullsize/addenda/").concat(current)).concat("/")).concat(clicked)).concat(".txt")
 
   let target = document.getElementById("fullsizeimg")
@@ -580,6 +584,9 @@ function fullsizer(clicked){
 
   var I = document.getElementById("galleryfullsizewrap");
         I.style.display = "flex";
+
+  
+  
 
 }
 
