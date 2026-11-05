@@ -562,8 +562,9 @@ $(window).on('load', function(){
             var post = data.split("\n");   // split all lines into array
             var posttitle = post.shift();   // read and remove first line
             var postdate = post.shift();
-            $("#bloglist").append("<li>" + postdate + posttitle + "</li>");
-            $("#bloglist2").append("<li>" + postdate + posttitle + "</li>");
+            var temptitle = "<li style = 'list-style-type:none; margin-left:20%; text-indent:-20%'>" + postdate + posttitle + "</li>"
+            $("#bloglist").append(temptitle);
+            $("#bloglist2").append(temptitle);
 
             $("#bloghere").append(posttitle);
             $("#bloghere").append(postdate);
