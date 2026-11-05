@@ -568,7 +568,7 @@ $(window).on('load', function(){
             var posttitle = post.shift();   // read and remove first line
             var postdate = post.shift();
 
-            var temptitle = "<li onClick='buttonchoice(6)'  style = 'list-style-type:none; ; padding:0;'>" + "<small style = 'float:left;'>" + postdate + "</small>" + "<b style: 'clear:left'>" + posttitle + "</b>" + "</li>"
+            var temptitle = "<li onClick='buttonchoice(6)'  style = 'list-style-type:none; ; padding:0;'>" + "<small style = 'float:left;'>" + postdate + "</small>" + "<b style: 'clear:left';display: inline-block;>" + posttitle + "</b>" + "</li>"
             $("#bloglist").append(temptitle);
             $("#bloglist2").append(temptitle);
 
@@ -586,12 +586,6 @@ $(window).on('load', function(){
 
 <script>
 var current = "NA"
-
-
-
-  function populateblog(){
-    
-  }
 
   function hide() {
             document.getElementById("gallerywrap").style.display = "none";
