@@ -544,8 +544,8 @@ var blogpostno = 3
 $(window).on('load', function(){
   var fileExt = ".txt";    
   $(document).ready(function(){   
-    
-    fetch('blog/head.txt')
+
+    fetch('public/blog/head.txt')
        .then(data => data.text()).then((data) =>
        document.getElementById('bloghere').innerHTML = data)
 
