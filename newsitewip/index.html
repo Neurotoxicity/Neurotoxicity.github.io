@@ -490,8 +490,8 @@ button:focus {
         <div class = "blogviewmiddle">
           <!--<embed src="blog/1.txt" id="bloghere" style="overflow-y: scroll; -ms-overflow-style: none; white-space: pre; scrollbar-width: none;height: 100%; width: 90.00%; margin-left:5%"> -->
 
-          <div id="bloghere" style="overflow-y:scroll; word-break: break-all; white-space: pre-wrap; scrollbar-width: none;height: 100%; width: 80.00%; margin-left:10%">
-            <div style= "margin-top: 25%"> <br></div>blog content goes here </div>
+          <div id="bloghere" style="overflow-y:scroll; word-break: break-word; white-space: pre-wrap; scrollbar-width: none;height: 100%; width: 80.00%; margin-left:10%">
+            <div style= "margin-top: 40%"> <br></div>blog content goes here </div>
           
         </div>
         <div class = "blogviewright">
@@ -545,9 +545,9 @@ $(window).on('load', function(){
   var fileExt = ".txt";    
   $(document).ready(function(){   
 
-    fetch('public/blog/head.txt')
-       .then(data => data.text()).then((data) =>
-       document.getElementById('bloghere').innerHTML = data)
+    // fetch('public/blog/head.txt')
+       // .then(data => data.text()).then((data) =>
+       // document.getElementById('bloghere').innerHTML = data)
 
     for (let  i = (blogpostno); i > 0; i--){
           var target = ("public/blog/".concat(i)).concat(".txt");
