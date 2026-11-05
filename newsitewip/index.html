@@ -555,16 +555,16 @@ $(window).on('load', function(){
        // .then(data => data.text()).then((data) =>
        // document.getElementById('bloghere').innerHTML = data)
 
-    for (let  i = (blogpostno); i > 0; i--){
+    for (let  b = (blogpostno); b > 0; b--){
           
-          var target = ("public/blog/".concat(i)).concat(".txt");
+          var target = ("public/blog/".concat(b)).concat(".txt");
           $.get(target, function(data){
             // alert("data: "+ data + "\nStatus: " + status);
             var post = data.split("\n");   // split all lines into array
             var posttitle = post.shift();   // read and remove first line
             var postdate = post.shift();
 
-            var temptitle = "<li style = 'list-style-type:none; margin-left:20%; text-indent:-20%'>" + postdate + posttitle + "</li>"
+            var temptitle = "<li style = 'list-style-type:none; margin-left:30%; text-indent:-20%'>" + postdate + posttitle + "</li>"
             $("#bloglist").append(temptitle);
             $("#bloglist2").append(temptitle);
 
