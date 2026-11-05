@@ -541,18 +541,17 @@ button:focus {
 $(window).on('load', function(){
   var fileExt = ".txt";    
   $(document).ready(function(){   
-            $.ajax({
-                  url: "blog/",
-                  success: function(data){
-                    console.log(data);
-                    $("#bloglist").html('<ul>');
-                    
-                    $(data).find("a:contains(" + fileExt + ")").each(function(){
-                      $("#bloglist").append('<li>'+$(this).text()+'<li>');
-                    });
-                    $("#bloglist").append('</ul>');
-                  },
+    $.ajax({
+      url: "public/blog/",
+      success: function(data){
+        console.log(data);
+        $("#bloglist").html('<ul>');
+          $(data).find("a:contains(" + fileExt + ")").each(function(){
+            $("#bloglist").append('<li>'+$(this).text()+'<li>');
             });
+            $("#bloglist").append('</ul>');
+          },
+        });
 
 
 
