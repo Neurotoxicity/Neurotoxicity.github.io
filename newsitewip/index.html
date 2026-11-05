@@ -62,11 +62,11 @@ body {
  .blogpostslist{
   overflow-y: scroll;
   background: rgb(209, 208, 208);
-  height: 50%; 
+  height: 20%; 
   scrollbar-width: none; 
   width: 60.00%;  
   margin: auto;
-
+  font-size: 0.8em;
  }
 
 
@@ -562,7 +562,7 @@ $(window).on('load', function(){
             var post = data.split("\n");   // split all lines into array
             var posttitle = post.shift();   // read and remove first line
             var postdate = post.shift();
-            $("#bloglist").append("<li>[" + postdate + "]" + posttitle + "</li>");
+            $("#bloglist").append("<li>" + postdate + posttitle + "</li>");
 
             $("#bloghere").append(posttitle);
             $("#bloghere").append(postdate);
