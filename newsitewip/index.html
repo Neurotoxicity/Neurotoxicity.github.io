@@ -457,8 +457,9 @@ button:focus {
       <div class = "galleryfullsizewrap" id = "galleryfullsizewrap">
       <div class = "galleryviewfullsizemiddle" style= "overflow-y:scroll; scrollbar-width: none;">
         <div><img id= "fullsizeimg" src="" ></div>
+        <div id="addendaimg"></div>
       </div>
-      <div class = "galleryviewfullsizeright" style = "word-break: break-all"><div style="font-size: 8em; line-height: 0.7">Fullsize</div><div id="deschere">img desc</div><div style="font-size:2em;"onClick="prestochango(current)">(return)</div></div>
+      <div class = "galleryviewfullsizeright"><div style="font-size: 8em; line-height: 0.7">Fullsize</div><div id="deschere"  style = "word-break: break-word">img desc</div><div style="font-size:2em;"onClick="prestochango(current)">(return)</div></div>
       
       </div>
 
@@ -515,18 +516,20 @@ button:focus {
 
 </body>
 
-<script>
-function loadDoc() {
-  const xhttp = new XMLHttpRequest();
-  xhttp.onload = function() {
-    document.getElementById("demo").innerHTML = this.responseText;
-  }
-  xhttp.open("GET", "blog/1.txt");
-  xhttp.send();
-}
-</script>
+
 
 <script>
+
+$(document).ready(function(){   
+
+        $.get("blog/", function(data) 
+        {
+            $("#bloglist").innertext += data;
+            console.log(data)
+        });
+    })
+
+
 
   function populateblog(){
     
@@ -604,15 +607,7 @@ prestochango(youclicked)
 
          
        
-         $(document).ready(function () 
-    {
-        $.get("blog/", function(data) 
-        {
-            $("#bloglist").append(data);
-            var blogfiles = data;
-            console.log(blogfiles)
-        });
-    })
+         
 
         fetch('blog/head.txt')
        .then(data => data.text()).then((data) =>
