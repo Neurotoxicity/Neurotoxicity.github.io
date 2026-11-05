@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="js/jquery-4.0.0.min.js"></script>
+<script src="js/fs.js"></script>
+ 
+
+
+  <link rel="icon" href="icon.png">
+
+
+   <meta charset="UTF-8">
+
+
+   <title>Neurotoxin Sommelier</title>
+
+
+   
+
+  <style>
+
+
+
+body {
+  
+  background-color: white;
+  background-image: none;
+  position: fixed;
+ }
+  
+    /* the left hand navigation box*/
+.leftcolumn {
+  float: left;
+  width: 20vw;
+  height: 100%;
+  margin-left: 0px;
+  border-right:2px solid black;
+  
+ }
+ /* denotes the part of the screen that isnt the navigation box*/
+.rightchunk {
+  float: left;
+  width: 60vw;
+  height: 100%;
+ }
+
+  .navibox {
+  float: left;
+  width: 100%;
+  height: 40vh;
+  
+   
+  border-bottom:2px solid black; 
+ }
+
+ .blogcolumn {
+  float: left;
+  width: 100%;
+  height: 55vh;
+
+ }
+ .blogpostslist{
+  overflow-y: scroll;
+  background: rgb(209, 208, 208);
+  height: 20%; 
+  scrollbar-width: none; 
+  width: 60.00%;  
+  margin: auto;
+  font-size: 0.8em;
+ }
+
+
+ .gallerywrap {
+  float: left;
+  width: 100%;
+  height: 100%;
+  display:none;
+  position: absolute;
+  
+  
+ }
+ 
+ /*placed inside rightchunk*/
+ .galleryviewtitlecontainer {
+  float: left;
+  width: 100%;
+  height: 40vh;
+  border-bottom:2px solid black; 
+  display: table-cell;
+  position: relative;
+  font-size: 4em
+ }
+ .galleryviewpicturecontainer {
+  float: left;
+  width: 100%;
+  height: 60vh;
+  
+
+ }
+ /*for the scrolling image thumbnails. place inside galleryviewpicturecontainer*/
+ .imagecard img{
+    float: left;
+    width: 15vw;
+    height: 25vh;
+    margin: 1%;
+    border-radius: 25px;
+    object-fit: cover;
+    display: block;
+ }
+
+.galleryviewfullsizemiddle{
+  width:65vw;
+  border-right:2px solid black; 
+  flex: 0 0 65vw;
+ }
+ .galleryviewfullsizeright{
+  width: 4vw;
+  margin-left:1%;
+  margin-right:3%;
+  flex: auto;
+ }
+.galleryfullsizewrap {
+  float: left;
+  width: 100%;
+  height: 100%;
+  display:none;
+  position: absolute;
+  }
+.blogwrap {
+  float: left;
+  width: 100%;
+  height: 100%;
+  display:none;
+  position: absolute;
+ }
+ .blogviewmiddle{
+  width:50vw;
+  border-right:2px solid black; 
+  flex: 0 0 50vw;
+ }
+ .blogviewright{
+  width: 15vw;
+  
+  flex: auto;
+ }
+
+#aboutwrap {
+  float: left;
+  width: 100%;
+  height: 100%;
+  display:none;
+  position: absolute;
+ }
+ .aboutpagetop{
+  height:45vh;
+  border-bottom:2px solid black;
+  
+ }
+ .aboutpagemiddle{
+  height:30vh;
+  
+  display:flex;
+  flex-direction:row;
+  overflow-y:scroll;
+  scrollbar-width: none;
+ }
+ .aboutjobs{
+  width:20vw;
+  margin-left:2%;
+  border-right:2px solid black;
+  left: 2%;
+  word-break:break-word;
+  flex: 0 0 20vw;
+ }
+.aboutjobsgif{
+  image-rendering: pixelated;
+  height:60%; 
+  margin-right:5%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  display:block;  
+  float:right;
+}
+.aboutjobstitle{
+  
+  display:block; 
+  clear:right; 
+  font-size:1.3em
+ 
+}
+ .aboutpagebottom{
+  height:30vh;
+  font-size: 20vh;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-top:2px solid black;
+  overflow: hidden;
+  margin-bottom: 0px;
+  
+  
+ }
+
+.scrollingcontainer{
+
+ 
+  position:absolute;
+    /**used to scroll text*/
+    white-space: nowrap;    
+    overflow: hidden;
+}
+.scrollingcontainer span {
+  animation: scrollingcontainer 5s linear infinite;
+}
+
+
+
+ 
+ /* Clear floats after the columns */
+ .row:after {
+   content: "";
+   display: table;
+   clear: both;
+ }
+ 
+ /* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
+ @media screen and (max-width: 600px) {
+   .column {
+     width: 100%;
+   }
+ } 
+
+ .headimg{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 720px;
+  animation: blinker 6s linear infinite;
+      }
+
+      .headimg:hover{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 720px;
+    animation: shake 0.8s linear infinite;
+        }
+
+                  .headimgright{
+       float: right;
+  width: 225px;
+      }
+
+
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+      @keyframes blinker {
+  50% { opacity: 0.85; }
+}
+
+
+@keyframes marquee-rtl {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+@keyframes marquee-ltr {
+    0% {
+    transform: translate(-100%, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.marquee-rtl {
+  /* overflow: hidden;*/ 
+  box-sizing: border-box;
+  width: 678px;
+      margin: 2px auto;
+      padding: 4px;
+	    text-align: center;
+}
+
+.marquee-rtl span {
+  display: inline-block;
+  width: max-content;
+  padding-left: 100%;
+  /* show the marquee just outside the paragraph */
+  will-change: transform;
+  animation: marquee-rtl 90s linear infinite;
+}
+
+.marquee-rtl span:hover {
+  animation-play-state: paused;
+}
+
+.marquee-ltr {
+  /* overflow: hidden; */
+  box-sizing: border-box;
+  width: 678px;
+      margin: 2px auto;
+      padding: 4px;
+	    text-align: center;
+}
+
+.marquee-ltr span {
+  display: inline-block;
+  width: max-content;
+  padding-left: 100%;
+  /* show the marquee just outside the paragraph */
+  will-change: transform;
+  animation: marquee-ltr 90s linear infinite;
+}
+
+.marquee-ltr span:hover {
+  animation-play-state: paused;
+}
+
+ img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+  max-width: 100%;
+  height: auto;
+    }
+
+.center {
+  text-align: center;
+}
+
+
+
+/*HELVETICASTANDARDCODE*/
+@import url("https://fonts.googleapis.com/css?family=Darumadrop One");
+@font-face {
+  font-family: "Darumadrop One";
+  src: url("{{ 'https://fonts.googleapis.com/css?family=Darumadrop+One' | file_url }}")
+    format(".woff2");
+}
+
+.wobbly-text-container {
+  font-size: 5em;
+  font-weight: 800;
+  font-family: "Darumadrop One", sans-serif;
+  color: #FFA500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wobbly-text-container-small {
+  font-size: 3em;
+  font-weight: 800;
+  font-family: "Darumadrop One", sans-serif;
+  color: #FFA500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wobbly-animation {
+  filter: url(#noise);
+}
+
+
+
+button {
+  padding: 2px;
+  height: 10%;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  overflow:hidden;
+  max-width: 100%;
+}
+
+button:focus {
+  outline: 0;
+}
+
+
+.button-three {
+  background-color: #cccccc;
+  text-align: justify;
+  font-size: 1.3em;
+  display: block
+  
+  
+}
+</style>
+<script>src="/js/jquery-4.0.0.min.js"</script>
+
+
+
+
+    
+ </head>
+
+ 
+
+<body style = "font-family: 'Courier New', monospace">
+  
+  <svg style="position: absolute; width: 0; height: 0;">
+    <filter id="noise">
+      <feturbulence id="noise-turbulence" type="fractalNoise" baseFrequency="0.01" numOctaves="1" seed="1" result="noise" />
+      <fedisplacementmap in="SourceGraphic" in2="noise" scale="15" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
+  
+  
+
+
+
+<!-- this is the lefthand column that doesnt change -->
+  <div class="leftcolumn">
+      <div class="navibox">
+          <img  src="logos/sommwhite.png" style="height: 40%">
+          <br>
+        <div style="width:60%; margin-left: 20%">
+        
+        <button class="button-three" onClick="buttonchoice(1)">ILLUSTRATION</button>
+        <button class="button-three" onClick="buttonchoice(2)">CHARACTER ART</button>
+        <button class="button-three" onClick="buttonchoice(3)">BACKGROUNDS</button>
+        <button class="button-three" onClick="buttonchoice(4)">PROPS</button>
+        <button class="button-three" onClick="buttonchoice(5)">PIXEL ART</button> 
+        <button class="button-three" onClick="buttonchoice(6)">BLOG</button>
+        <br> 
+        <button class="button-three" onClick="buttonchoice(7)" style = "font-size:0.8em">ABOUT//CONTACT</button> 
+        </div>
+
+        
+        
+        <br><br><br>
+      </div>
+
+    <div class="blogcolumn">
+    <br><br><br>
+        <div style="width:60%; margin-left: 20%">Calliope Parsch is a freelance illustrator and pixel artist based in Melbourne, Australia. Her work betrays a preoccupation with thick brushstrokes, thick fabric, thick women, and explosions. How juvenile...<br><br><div onclick="mailto:cal.neurotoxin@gmail.com"> Contact: cal.neurotoxin@gmail.com</div>
+ 
+        </div>
+
+        <br><br><br>
+        <div class=center>Latest Updates</div>
+        <div class = "blogpostslist" id="bloglist"></div>
+    </div>
+    <div>website by Calliope Parsch</div>
+  </div>
+
+  
+  
+  <div class="rightchunk"> 
+    <!-- what displays in here needs to change depending on which navigation button is pressed-->
+
+    <div class = "gallerywrap" id="gallerywrap">
+      <div class = "galleryviewtitlecontainer">
+        
+         <div id="gallerytitle" style="position: absolute; bottom: 0; left: 0; margin-bottom: 1%; margin-left: 2%">
+        No_Gallery_Selected
+      </div>
+    </div>
+      
+      <div class = "galleryviewpicturecontainer">
+        <div class = "imagecard" onClick="fullsizer(1)"><img   id = "img1" src=""></div>
+        <div class = "imagecard" onClick="fullsizer(2)"><img   id = "img2" src=""></div>
+        <div class = "imagecard" onClick="fullsizer(3)"><img   id = "img3" src=""></div>
+        <div class = "imagecard" onClick="fullsizer(4)"><img   id = "img4" src=""></div>
+        <div class = "imagecard" onClick="fullsizer(5)"><img   id = "img5" src=""></div>
+        <div class = "imagecard" onClick="fullsizer(6)"><img   id = "img6" src=""></div>
+        <div class = "imagecard" onClick="fullsizer(7)"><img   id = "img7" src=""></div>
+        <div class = "imagecard" onClick="fullsizer(8)"><img   id = "img8" src=""></div>
+        
+      </div>
+      </div>
+
+      <div class = "galleryfullsizewrap" id = "galleryfullsizewrap">
+      <div class = "galleryviewfullsizemiddle" style= "overflow-y:scroll; scrollbar-width: none;">
+        <div><img id= "fullsizeimg" src="" ></div>
+        <div id="addendaimg"></div>
+      </div>
+      <div class = "galleryviewfullsizeright"><div style="font-size: 8em; line-height: 0.7; word-break: break-all;">Fullsize</div><div id="deschere"  style = "word-break: break-word">img desc</div><div style="font-size:2em; bottom:0"onClick="prestochango(current)">(return)</div></div>
+      
+      </div>
+
+
+
+      <div class = "blogwrap" id="blogwrap">
+        <div class = "blogviewmiddle">
+          <!--<embed src="blog/1.txt" id="bloghere" style="overflow-y: scroll; -ms-overflow-style: none; white-space: pre; scrollbar-width: none;height: 100%; width: 90.00%; margin-left:5%"> -->
+
+          <div id="bloghere" style="overflow-y:scroll; word-break: break-word; white-space: pre-wrap; scrollbar-width: none;height: 100%; width: 80.00%; margin-left:10%">
+            <div style= "margin-top: 40%"> <br></div></div>
+          
+        </div>
+        <div class = "blogviewright">
+          <div style ="margin-left:1%; font-size: 10vw;">Blog</div>
+           <div id="bloglist2" style="overflow-y:scroll; word-break: break-all; -ms-overflow-style: none; white-space: pre-wrap; scrollbar-width: none;height: 100%; width: 80.00%; margin-left:5%"></div>
+        </div>
+
+      </div>
+
+
+
+      <div class = "aboutwrap" id="aboutwrap">
+        <div class = "aboutpagetop"></div>
+        <div class = "aboutpagemiddle">
+          <div class = "aboutjobs" style="margin-left:2%"> <h1>Calliope Parsch</h1><div  onclick="mailto(cal.neurotoxin@gmail.com)"><h2>cal.neurotoxin@gmail.com</h2></div><br>Past Clients: Rubeki Games, Only By Midnight, Creature.Love, Putrid//Sharp</div>
+          
+          <div class = "aboutjobs"><img class="aboutjobsgif" src="logos/running for website.gif"><div class="aboutjobstitle">Concept / Pixel artist</div><br><div onclick="window.open('https://creature.love/')"> Creature.Love</div><br> feb2026-current</div>
+          <div class = "aboutjobs"><img class="aboutjobsgif" src="logos/squirmer.gif"><div class="aboutjobstitle">Environment / Pixel artist</div><br><div onclick="window.open('https://putridsharp.cargo.site/')"> Putrid/Sharp</div><br> jan2026-current</div>
+          <!-- add more aboutjobs divs here of the same format as these two once I have more proper jobs to brag about...-->  
+        </div>
+        <div class = "aboutpagebottom">
+
+          <div id="gallerytitle" style="position: absolute; bottom: 0; left: 0; margin-bottom: 0%; margin-top: 1%; margin-left: 2%; margin-right:5%;">
+          About//Contact
+      </div>
+        </div>
+      </div>
+
+
+    </div>
+    
+
+
+
+  </div>
+
+
+
+  
+  
+
+
+
+</body>
+
+<script type="text/javascript">
+
+
+const blogpostno = 1
+
+
+$(window).on('load', function(){
+  
+  var fileExt = ".txt";    
+  $(document).ready(function(){   
+
+    // fetch('public/blog/head.txt')
+       // .then(data => data.text()).then((data) =>
+       // document.getElementById('bloghere').innerHTML = data)
+
+    for (let  b = (blogpostno); b > 0; b--){
+          
+          var target = ("public/blog/".concat(b)).concat(".txt");
+          $.get(target, function(data){
+            // alert("data: "+ data + "\nStatus: " + status);
+            var post = data.split("\n");   // split all lines into array
+            var posttitle = post.shift();   // read and remove first line
+            var postdate = post.shift();
+            
+            var temptitle = '<li onClick="buttonchoice(6)"  style = "list-style-type:none; ; padding:0;"><small style ="float:left;">' + postdate + '</small><br><b style = "clear:left; display:inline-block">' + posttitle + '</b></li><hr>'
+            $("#bloglist").append(temptitle);
+            $("#bloglist2").append(temptitle);
+
+            $("#bloghere").append("<li style = 'list-style-type:none;'><b>" + posttitle + "</b></li>" );
+            $("#bloghere").append("<li style = 'list-style-type:none; margin-left:20%;'>" + postdate + "</li>");
+            $("#bloghere").append("<li style = 'list-style-type:none; margin-left:20%;'>" + post + "</li><br><br><br>");
+
+        });
+        }
+         
+    });
+  });
+  
+</script>
+
+<script>
+var current = "NA"
+
+  function hide() {
+            document.getElementById("gallerywrap").style.display = "none";
+            
+        }
+
+
+
+function fullsizer(clicked){
+  var T = document.getElementById("gallerywrap");
+        T.style.display = "none";
+  
+
+  let filepath = (((("fullsize/").concat(current)).concat("/")).concat(clicked)).concat(".jpg")
+  let addendapath = (("fullsize/addenda/").concat(current)).concat("/")
+  let descpath = (((("fullsize/addenda/").concat(current)).concat("/")).concat(clicked)).concat(".txt")
+
+  let target = document.getElementById("fullsizeimg")
+  target.src = filepath
+  
+  fetch(descpath)
+       .then(data => data.text()).then((data) =>
+       document.getElementById('deschere').innerText = data)
+
+
+  var I = document.getElementById("galleryfullsizewrap");
+        I.style.display = "flex";
+
+  
+  
+
+}
+
+ 
+
+
+
+function buttonchoice(choice){
+  const buttonoptions = ["Illustration", "Character_Art", "Environment_Art", "Prop_Art", "Pixel_Art", "blog", "about"];
+let youclicked = buttonoptions[choice-1];
+prestochango(youclicked);
+current = youclicked;
+}
+
+  function prestochango(chose){
+    current=chose;
+    if (chose === "NA"){
+        var T = document.getElementById("gallerywrap");
+        T.style.display = "none";
+        var H = document.getElementById("blogwrap");
+        H.style.display = "none";
+        var I = document.getElementById("aboutwrap");
+        I.style.display = "none";
+        var J = document.getElementById("galleryfullsizewrap");
+        J.style.display = "none";
+    }
+    else if (chose === "about"){ 
+        var T = document.getElementById("gallerywrap");
+        T.style.display = "none";
+        var H = document.getElementById("blogwrap");
+        H.style.display = "none";
+        var J = document.getElementById("galleryfullsizewrap");
+        J.style.display = "none";
+        var I = document.getElementById("aboutwrap");
+        I.style.display = "block";
+
+    }
+    else if (chose==="blog"){ 
+        var T = document.getElementById("gallerywrap");
+        T.style.display = "none";
+        var H = document.getElementById("aboutwrap");
+        H.style.display = "none";
+        var J = document.getElementById("galleryfullsizewrap");
+        J.style.display = "none";
+        var I = document.getElementById("blogwrap");
+        I.style.display = "flex";
+
+         
+       
+         
+
+        
+
+       
+        
+
+
+        
+
+    }
+    
+  
+    else{
+        var H = document.getElementById("aboutwrap");
+        H.style.display = "none";
+        var I = document.getElementById("blogwrap");
+        I.style.display = "none";
+        var T = document.getElementById("gallerywrap");
+        T.style.display = "block";
+        var J = document.getElementById("galleryfullsizewrap");
+        J.style.display = "none";
+
+        document.getElementById("gallerytitle").innerText = chose
+        
+        
+        fetch("logos/ascii.txt").then(data => data.text()).then((data) =>
+          document.getElementById("galleryascii").innerText = data)
+          
+
+        for (let i = 1; i < 9; i++){
+          let temp = ("img".concat(i))
+          let target = document.getElementById(temp)
+          target.src = ((filepath).concat(i)).concat(".jpg")
+        }
+    current = chose
+    }
+
+    current = chose
+    }
+
+
+  /*HELVETICASTANDARDCODE*/
+const noiseTurbulence = document.getElementById("noise-turbulence");
+let seedValue = 1;
+
+setInterval(() => {
+  seedValue = Math.floor(Math.random() * 100);
+  if (prevSeedValue == seedValue) {
+    seedValue += 1;
+  }
+  noiseTurbulence.setAttribute("seed", seedValue);
+}, 200);
+prevSeedValue = seedValue;
+</script>
+
+
+
+</html>
