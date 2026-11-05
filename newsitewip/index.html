@@ -567,8 +567,8 @@ $(window).on('load', function(){
             var post = data.split("\n");   // split all lines into array
             var posttitle = post.shift();   // read and remove first line
             var postdate = post.shift();
-
-            var temptitle = "<li onClick='buttonchoice(6)'  style = 'list-style-type:none; ; padding:0;'>" + "<small style = 'float:left;'>" + postdate + "</small>" + "<b style: 'clear:left';display: inline-block;>" + posttitle + "</b>" + "</li>"
+            
+            var temptitle = '<li onClick="buttonchoice(6)"  style = "list-style-type:none; ; padding:0;"><small style ="float:left;">' + postdate + '</small><b style = "clear:left; display:inline-block">' + posttitle + '</b></li>'
             $("#bloglist").append(temptitle);
             $("#bloglist2").append(temptitle);
 
