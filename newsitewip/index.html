@@ -2,7 +2,7 @@
 <html>
 <head>
 <script src="js/jquery-4.0.0.min.js"></script>
-
+<script src="js/fs.js"></script>
  
 
 
@@ -546,9 +546,12 @@ button:focus {
 
 <script type="text/javascript">
 
-var blogpostno = 3
+const fs = require('fs')
+const blogpostno = fs.readdirSync('/public/blog').length
+
 
 $(window).on('load', function(){
+  
   var fileExt = ".txt";    
   $(document).ready(function(){   
 
