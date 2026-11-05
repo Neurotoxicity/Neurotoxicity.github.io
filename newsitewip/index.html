@@ -416,7 +416,7 @@ button:focus {
 
     <div class="blogcolumn">
     <br><br><br>
-        <div style="width:60%; margin-left: 20%">Calliope Parsch is a freelance illustrator and concept artist based in Melbourne, Australia. Her work betrays a preoccupation with thick brushstrokes, thick fabric, thick women, and explosions. How juvenile...<br><br><div onclick="mailto:cal.neurotoxin@gmail.com">cal.neurotoxin@gmail.com</div>
+        <div style="width:60%; margin-left: 20%">Calliope Parsch is a freelance illustrator and pixel artist based in Melbourne, Australia. Her work betrays a preoccupation with thick brushstrokes, thick fabric, thick women, and explosions. How juvenile...<br><br><div onclick="mailto:cal.neurotoxin@gmail.com">cal.neurotoxin@gmail.com</div>
  
         </div>
 
@@ -458,7 +458,7 @@ button:focus {
       <div class = "galleryviewfullsizemiddle" style= "overflow-y:scroll; scrollbar-width: none;">
         <div><img id= "fullsizeimg" src="" ></div>
       </div>
-      <div class = "galleryviewfullsizeright" style = "word-break: break-all">Fullsize <p style="font-size:0.4em;"onClick="prestochango(current)">(return)</p> </div>
+      <div class = "galleryviewfullsizeright" style = "word-break: break-all">Fullsize <p style="font-size:0.4em;"onClick="prestochango(current)">(return)</p><div id="deschere">img description goes here</div> </div>
       
       </div>
 
@@ -545,10 +545,16 @@ function fullsizer(clicked){
   
 
   let filepath = (((("fullsize/").concat(current)).concat("/")).concat(clicked)).concat(".jpg")
+  let descpath = (((("fullsize/addenda/").concat(current)).concat("/")).concat(clicked)).concat(".txt")
 
   let target = document.getElementById("fullsizeimg")
   target.src = filepath
   
+  fetch(descpath)
+       .then(data => data.text()).then((data) =>
+       document.getElementById('deschere').innerText = data)
+
+
   var I = document.getElementById("galleryfullsizewrap");
         I.style.display = "flex";
 
