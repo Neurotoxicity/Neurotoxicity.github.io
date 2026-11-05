@@ -538,27 +538,33 @@ button:focus {
 </body>
 
 <script type="text/javascript">
+
+var blogpostno = 3
+
 $(window).on('load', function(){
   var fileExt = ".txt";    
   $(document).ready(function(){   
-    $.ajax({
-      url: "public/blog/",
-      success: function(data){
-        console.log(data);
-        $("#bloglist").html('<ul>');
-          $(data).find("a:contains(" + fileExt + ")").each(function(){
-            $("#bloglist").append('<li>'+$(this).text()+'<li>');
-            });
-            $("#bloglist").append('</ul>');
-          },
-        });
+    
+    fetch('blog/head.txt')
+       .then(data => data.text()).then((data) =>
+       document.getElementById('bloghere').innerHTML = data)
 
-
-
-        /* $.get("/blog/", function(data){
+    for (let  i = (blogpostno); i > 0; i--){
+          var target = ("/blog/".concat(i)).concat(".txt");
+          $.get(target, function(data){
             alert("data: "+ data + "\nStatus: " + status);
-            $("#bloglist").append(data);
-        });*/
+            var post = data.split("\n");   // split all lines into array
+            var posttitle = post.shift();   // read and remove first line
+            var postdate = post.shift();
+            $("#bloglist").append("<li>[" + postdate + "]" + posttitle + "</li>");
+
+            $("#bloghere").append(posttitle);
+            $("#bloghere").append(postdate);
+            $("#bloghere").append(post);
+
+        });
+        }
+         
     });
   });
   
@@ -653,9 +659,7 @@ current = youclicked;
        
          
 
-        fetch('blog/head.txt')
-       .then(data => data.text()).then((data) =>
-       document.getElementById('bloghere').innerHTML = data)
+        
 
        
         
