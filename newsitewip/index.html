@@ -565,12 +565,12 @@ $(window).on('load', function(){
             var posttitle = post.shift();   // read and remove first line
             var postdate = post.shift();
 
-            var temptitle = "<li style = 'list-style-type:none; ; padding:0; margin-left:40%; text-indent:-45%'>" + postdate + "<b>" + posttitle + "</b>" + "</li>"
+            var temptitle = "<li onClick='buttonchoice(6)'  style = 'list-style-type:none; ; padding:0;'>" + "<small style = 'float:left;'>" + postdate + "</small>" + "<b style: 'clear:left'>" + posttitle + "</b>" + "</li>"
             $("#bloglist").append(temptitle);
             $("#bloglist2").append(temptitle);
 
-            $("#bloghere").append("<li onClick='buttonchoice(6)' style = 'list-style-type:none;'>" + posttitle + "</li>" );
-            $("#bloghere").append("<li>" + postdate + "</li>");
+            $("#bloghere").append("<listyle = 'list-style-type:none;'>" + posttitle + "</li>" );
+            $("#bloghere").append("<li style = 'list-style-type:none;>" + postdate + "</li>");
             $("#bloghere").append("<li style = 'list-style-type:none; margin-left:20%;'>" + post + "</li><br><br><br>");
 
         });
