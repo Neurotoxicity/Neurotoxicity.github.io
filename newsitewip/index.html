@@ -556,19 +556,21 @@ $(window).on('load', function(){
        // document.getElementById('bloghere').innerHTML = data)
 
     for (let  i = (blogpostno); i > 0; i--){
+          
           var target = ("public/blog/".concat(i)).concat(".txt");
           $.get(target, function(data){
             // alert("data: "+ data + "\nStatus: " + status);
             var post = data.split("\n");   // split all lines into array
             var posttitle = post.shift();   // read and remove first line
             var postdate = post.shift();
+
             var temptitle = "<li style = 'list-style-type:none; margin-left:20%; text-indent:-20%'>" + postdate + posttitle + "</li>"
             $("#bloglist").append(temptitle);
             $("#bloglist2").append(temptitle);
 
-            $("#bloghere").append(posttitle);
-            $("#bloghere").append(postdate);
-            $("#bloghere").append(post);
+            $("#bloghere").append("<li style = 'list-style-type:none;'>" + posttitle + "</li>" );
+            $("#bloghere").append("<li>" + postdate + "</li>");
+            $("#bloghere").append("<li style = 'list-style-type:none; margin-left:20%;'>" + post + "</li>");
 
         });
         }
