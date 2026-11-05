@@ -154,7 +154,9 @@ body {
  }
  .aboutjobs{
   width:20vw;
-  border-right:2px solid black; 
+  margin-left:2%;
+  border-right:2px solid black;
+  left: 2%
   flex: 0 0 20vw;
  }
 
@@ -361,7 +363,7 @@ button:focus {
 .button-three {
   background-color: #cccccc;
   text-align: justify;
-  font-size: 1em;
+  font-size: 1.3em;
   display: block
   
   
@@ -402,8 +404,9 @@ button:focus {
         <button class="button-three" onClick="buttonchoice(3)">BACKGROUNDS</button>
         <button class="button-three" onClick="buttonchoice(4)">PROPS</button>
         <button class="button-three" onClick="buttonchoice(5)">PIXEL ART</button> 
-        <button class="button-three" onClick="buttonchoice(6)">BLOG</button> 
-        <button class="button-three" onClick="buttonchoice(7)">ABOUT//CONTACT</button> 
+        <button class="button-three" onClick="buttonchoice(6)">BLOG</button>
+        <br> 
+        <button class="button-three" onClick="buttonchoice(7)" style = "font-size:0.8em">ABOUT//CONTACT</button> 
         </div>
 
         
@@ -413,18 +416,14 @@ button:focus {
 
     <div class="blogcolumn">
     <br><br><br>
-        <div style="width:60%; margin-left: 20%">
-        <p>Calliope Parsch is a Melbourne-based illustrator<br>
-            </p>
+        <div style="width:60%; margin-left: 20%">Calliope Parsch is a freelance illustrator and concept artist based in Melbourne, Australia. Her work betrays a preoccupation with thick brushstrokes, thick fabric, thick women, and explosions. How juvenile...<br><br><div onclick="mailto:cal.neurotoxin@gmail.com">cal.neurotoxin@gmail.com</div>
  
         </div>
 
         <br><br><br>
         <div class=center> <p>Latest Updates</p></div>
         <div id="bloglist" style="overflow-y: scroll;background: rgb(209, 208, 208);height: 50%; scrollbar-width: none; width: 60.00%;  margin: auto;">
-            <p>blog</p>
-            <p>goes</p>
-            <p>here</p>
+            <p>list of posts</p>
     
         </div>
     </div>
@@ -485,8 +484,9 @@ button:focus {
       <div class = "aboutwrap" id="aboutwrap">
         <div class = "aboutpagetop"></div>
         <div class = "aboutpagemiddle">
-          <div class = "aboutjobs">Environment Artist <br>Putrid//Sharp</div>
-          <div class = "aboutjobs">Pixel Artist <br> Creature.Love </div>
+          <div class = "aboutjobs" style="margin-left:2%"> <h1>Calliope Parsch</h1><h2>cal.neurotoxin@gmail.com</h2><br>Clients: Rubeki Games, Only By Midnight, Creature.Love, Putrid//Sharp</div>
+          <div class = "aboutjobs"><img style="image-rendering: pixelated; position:absolute; top:1%; right:35%; height:50%" src="logos/squirmer.gif"> <div  style="padding-top: 40%; margin-left:2%"></div><div style = "font-size:1.3em">Environment / Pixel artist</div> <br><div onclick="window.open('https://putridsharp.cargo.site/')">Putrid/Sharp</div><br>jan2026-current</div>
+          <div class = "aboutjobs"><img style="image-rendering: pixelated; position:absolute; top:20%; right:3%; height:30%" src="logos/running for website.gif"><div  style="padding-top: 40%; margin-left:2%"></div><div style = "font-size:1.3em">Concept / Pixel artist</div> <br><div onclick="window.open('https://creature.love/')">Creature.Love</div><br>feb2026-current</div>
 
 
         </div>
