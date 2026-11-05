@@ -144,29 +144,48 @@ body {
  }
  .aboutpagetop{
   height:45vh;
-  border-bottom:2px solid black; 
+  border-bottom:2px solid black;
+  
  }
  .aboutpagemiddle{
   height:30vh;
-  border-bottom:2px solid black;
-  position: absolute;
-  display:flex
+  
+  display:flex;
+  flex-direction:row;
+  overflow-y:scroll;
+  scrollbar-width: none;
  }
  .aboutjobs{
   width:20vw;
   margin-left:2%;
   border-right:2px solid black;
-  left: 2%
+  left: 2%;
+  word-break:break-word;
   flex: 0 0 20vw;
  }
-
+.aboutjobsgif{
+  image-rendering: pixelated;
+  height:60%; 
+  margin-right:5%; 
+  display:block;  
+  float:right;
+}
+.aboutjobstitle{
+  
+  display:block; 
+  clear:right; 
+  font-size:1.3em
+ 
+}
  .aboutpagebottom{
   height:30vh;
   font-size: 20vh;
   text-overflow: ellipsis;
   white-space: nowrap;
+  border-top:2px solid black;
   overflow: hidden;
   margin-bottom: 0px;
+  
   
  }
 
@@ -459,7 +478,7 @@ button:focus {
         <div><img id= "fullsizeimg" src="" ></div>
         <div id="addendaimg"></div>
       </div>
-      <div class = "galleryviewfullsizeright"><div style="font-size: 8em; line-height: 0.7">Fullsize</div><div id="deschere"  style = "word-break: break-word">img desc</div><div style="font-size:2em;"onClick="prestochango(current)">(return)</div></div>
+      <div class = "galleryviewfullsizeright"><div style="font-size: 8em; line-height: 0.7; word-break: break-all;">Fullsize</div><div id="deschere"  style = "word-break: break-word">img desc</div><div style="font-size:2em;"onClick="prestochango(current)">(return)</div></div>
       
       </div>
 
@@ -486,10 +505,10 @@ button:focus {
         <div class = "aboutpagetop"></div>
         <div class = "aboutpagemiddle">
           <div class = "aboutjobs" style="margin-left:2%"> <h1>Calliope Parsch</h1><h2>cal.neurotoxin@gmail.com</h2><br>Clients: Rubeki Games, Only By Midnight, Creature.Love, Putrid//Sharp</div>
-          <div class = "aboutjobs"><img style="image-rendering: pixelated; position:absolute; top:1%; right:35%; height:50%" src="logos/squirmer.gif"> <div  style="padding-top: 40%; margin-left:2%"></div><div style = "font-size:1.3em">Environment / Pixel artist</div> <br><div onclick="window.open('https://putridsharp.cargo.site/')">Putrid/Sharp</div><br>jan2026-current</div>
-          <div class = "aboutjobs"><img style="image-rendering: pixelated; position:absolute; top:20%; right:3%; height:30%" src="logos/running for website.gif"><div  style="padding-top: 40%; margin-left:2%"></div><div style = "font-size:1.3em">Concept / Pixel artist</div> <br><div onclick="window.open('https://creature.love/')">Creature.Love</div><br>feb2026-current</div>
-
-
+          
+          <div class = "aboutjobs"><img class="aboutjobsgif" src="logos/running for website.gif"><div class="aboutjobstitle">Concept / Pixel artist</div><br><div onclick="window.open('https://creature.love/')"> Creature.Love</div><br> feb2026-current</div>
+          <div class = "aboutjobs"><img class="aboutjobsgif" src="logos/squirmer.gif"><div class="aboutjobstitle">Environment / Pixel artist</div><br><div onclick="window.open('https://putridsharp.cargo.site/')"> Putrid/Sharp</div><br> jan2026-current</div>
+          <!-- add more aboutjobs divs here of the same format as these two once I have more proper jobs to brag about...-->  
         </div>
         <div class = "aboutpagebottom">
 
