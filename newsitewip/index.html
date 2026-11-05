@@ -538,6 +538,7 @@ button:focus {
 
 
 <script>
+var current = "NA"
 
 $(document).ready(function(){   
 
@@ -559,7 +560,7 @@ $(document).ready(function(){
             
         }
 
-var current = "NA"
+
 
 function fullsizer(clicked){
   var T = document.getElementById("gallerywrap");
@@ -587,12 +588,14 @@ function fullsizer(clicked){
 
 
 function buttonchoice(choice){
-  const buttonoptions = ["Illustration", "Character_Art", "Environment_Art", "Prop_Art", "Pixel_Art", "blog", "about"]
-let youclicked = buttonoptions[choice-1]
-prestochango(youclicked)
+  const buttonoptions = ["Illustration", "Character_Art", "Environment_Art", "Prop_Art", "Pixel_Art", "blog", "about"];
+let youclicked = buttonoptions[choice-1];
+prestochango(youclicked);
+current = youclicked;
 }
 
   function prestochango(chose){
+    current=chose;
     if (chose === "NA"){
         var T = document.getElementById("gallerywrap");
         T.style.display = "none";
@@ -660,7 +663,7 @@ prestochango(youclicked)
           let target = document.getElementById(temp)
           target.src = ((filepath).concat(i)).concat(".jpg")
         }
-
+    current = chose
     }
 
     current = chose
