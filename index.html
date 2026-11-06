@@ -617,6 +617,7 @@ function fullsizer(clicked){
           let temp = ((addendapath).concat(betty[i])).concat(".jpg")
           let temp2 = ("addenda").concat(i+1)
           $.get(temp)
+          document.getElementById(temp2).display = "none"
     .done(function() { 
         // exists code 
         document.getElementById(temp2).src = (temp)
