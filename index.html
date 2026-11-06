@@ -45,6 +45,7 @@ body {
   height: 100%;
  }
 
+ 
   .navibox {
   float: left;
   width: 100%;
@@ -70,7 +71,27 @@ body {
   font-size: 0.8em;
  }
 
-
+.landingwrap{
+  float: left;
+  width: 100%;
+  height: 100%;
+  display:none;
+  position: absolute;
+}
+.landingscroll{
+  height:30vh;
+  
+  display:flex;
+  flex-direction:row;
+  overflow-y:scroll;
+  scrollbar-width: none;
+  animation: moveSlideshow 15s linear infinite;
+}
+@keyframes moveSlideshow {
+  100% { 
+    transform: translateX(-66.6666%);  
+  }
+}
  .gallerywrap {
   float: left;
   width: 100%;
@@ -447,7 +468,7 @@ button:focus {
 
     <div class="blogcolumn">
     <br><br><br>
-        <div style="width:60%; margin-left: 20%">Calliope Parsch is a freelance illustrator and pixel artist based in Melbourne, Australia. Her work betrays a preoccupation with thick brushstrokes, thick fabric, thick women, and explosions. How juvenile...<br><br><div onclick="mailto:cal.neurotoxin@gmail.com"> Contact: cal.neurotoxin@gmail.com</div>
+        <div style="width:60%; margin-left: 20%">This is some selected work from me, Calliope Parsch. Contact me for freelance work, I'll work hard for the money.<br><br><a href="mailto:cal.neurotoxin@gmail.com" style="color: #000000; text-decoration: none;"> Contact: cal.neurotoxin@gmail.com</a>
  
         </div>
 
@@ -462,6 +483,9 @@ button:focus {
   
   <div class="rightchunk"> 
     <!-- what displays in here needs to change depending on which navigation button is pressed-->
+    
+
+
 
     <div class = "gallerywrap" id="gallerywrap">
       <div class = "galleryviewtitlecontainer">
