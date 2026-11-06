@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="js/jquery-4.0.0.min.js"></script>
 <script src="js/fs.js"></script>
  
@@ -616,7 +617,13 @@ function fullsizer(clicked){
 
   
    let betty = ["a","b","c"];
+//this code is supposed to figure out if theres an addenda image in the addenda folder 
+//and then feed its filepath to the addenda1 img divs in the body
+//and make the div invisible if there wasnt a file
+//cuz i want to be able to toss addenda images in and also not put any in if i dont have any
+// addenda images are like 1a.jpg and are associated with 1.jpy in the fullsize folder
 
+//this code doesnt work and idk why. shrug
   for (let p = 0; p < 3; p++){
           let temp = ((addendapath).concat(betty[p])).concat(".jpg")
           let temp2 = ("addenda").concat(p+1)
