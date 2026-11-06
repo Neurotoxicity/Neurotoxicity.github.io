@@ -172,11 +172,6 @@ body {
   word-break:break-word;
   flex: 0 0 20vw;
  }
- .addendimage{
-  left: 0;
-  flex:auto;
-  width:auto;
- }
 .aboutjobsgif{
   image-rendering: pixelated;
   height:60%; 
@@ -195,7 +190,7 @@ body {
 }
  .aboutpagebottom{
   height:30vh;
-  font-size: 9vw;
+  font-size: 20vh;
   text-overflow: ellipsis;
   white-space: nowrap;
   border-top:2px solid black;
@@ -490,7 +485,7 @@ button:focus {
       <div class = "galleryfullsizewrap" id = "galleryfullsizewrap">
       <div class = "galleryviewfullsizemiddle" style= "overflow-y:scroll; scrollbar-width: none;">
         <div><img id= "fullsizeimg" src="" ></div>
-        <div class = addendimage><img id="addenda1" src="" ></div><div class = addendimage><img id="addenda2" src=""></div><div class = addendimage><img id="addenda3" src=""></div>
+        <div id="addendaimg"> <img id = "addimg1" src=""></div>
       </div>
       <div class = "galleryviewfullsizeright"><div style="font-size: 8em; line-height: 0.7; word-break: break-all;">Fullsize</div><div id="deschere"  style = "word-break: break-word">img desc</div><div style="font-size:2em;"onClick="prestochango(current)">(return)</div></div>
       
@@ -606,15 +601,11 @@ function fullsizer(clicked){
 
   let filepath = (((("fullsize/").concat(current)).concat("/")).concat(clicked)).concat(".jpg")
   let addendapath = ((("fullsize/addenda/").concat(current)).concat("/")).concat(clicked)
-  let descpath = (addendapath).concat(".txt")
+  let descpath = (((("fullsize/addenda/").concat(current)).concat("/")).concat(clicked)).concat(".txt")
 
   let target = document.getElementById("fullsizeimg")
   target.src = filepath
   
- 
-
-
-
   fetch(descpath)
        .then(data => data.text()).then((data) =>
        document.getElementById('deschere').innerText = data)
@@ -641,6 +632,7 @@ function fullsizer(clicked){
         document.getElementById(temp2).display = "none"
     })
         }
+  
 
 }
 
@@ -654,9 +646,6 @@ let youclicked = buttonoptions[choice-1];
 prestochango(youclicked);
 current = youclicked;
 }
-function hideImg(input) {
-            document.getElementById(input).style.display = "none";
-        }
 
   function prestochango(chose){
     current=chose;
