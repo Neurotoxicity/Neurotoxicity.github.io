@@ -722,16 +722,15 @@ function fullsizer(clicked){
   for (let p = 0; p < 3; p++){
           let temp = ((addendapath).concat(betty[p])).concat(".jpg")
           let temp2 = ("addimg").concat(p)
-          
           $.get(temp).done(function(){ 
         // exists code
         document.getElementById(temp2).src= temp;
-        document.getElementById(temp2).display= "flex";
+        document.getElementById(temp2).style.display= "flex";
         console.log("retrieved: " + temp + " at "+ temp2);
     }).fail(function() { 
         // not exists code
         document.getElementById(temp2).src= "";
-        document.getElementById(temp2).display= "none";
+        document.getElementById(temp2).style.display= "none";
         console.log("failed: " + temp + " at "+ temp2);
     })
         }
