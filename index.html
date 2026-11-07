@@ -622,7 +622,7 @@ button:focus {
 <script type="text/javascript">
 
 
-const blogpostno = 3
+const blogpostno = 1
 
 
 $(window).on('load', function(){
@@ -631,13 +631,7 @@ $(window).on('load', function(){
   
   load the ascii art into asciidiv
   $(document).ready(function(){   
-    $.get("logos/ascii1.txt", function(data){
-      $("#ascii1a").innertext(data);
-      $("#ascii1b").innertext(data);
-    });
-    $.get("logos/ascii2.txt", function(data){
-      $("#ascii2a").innertext(data);
-    });
+    
 
 
 
@@ -661,6 +655,14 @@ $(window).on('load', function(){
 
         });
         }
+
+      $.get("logos/ascii1.txt", function(data){
+      $("#ascii1a").innertext = data;
+      $("#ascii1b").innertext = data;
+    });
+    $.get("logos/ascii2.txt", function(data){
+      $("#ascii2a").innertext = data;
+    });
          
     });
   });
