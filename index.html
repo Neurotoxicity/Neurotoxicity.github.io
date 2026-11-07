@@ -522,13 +522,13 @@ button:focus {
     <!-- what displays in here needs to change depending on which navigation button is pressed-->
     
     <div class="marquee" id="asciidiv">
-		<div class="marquee__item" style="font-size: 20x">
-			              <div id="ascii1a" style="font-size:20px"></div>                                                                                                                                                                                                                                                                                                       
+		<div class="marquee__item" style="font-size: 20px">
+			              <pre><div id="ascii1a" style="font-size:20px"></div></pre>                                                                                                                                                                                                                                                                                                       
                                                                                                                                                                                                                                                                                                                         
 
 		</div>
 		<div class="marquee__item" style="font-size: 20x">
-			                <div id="ascii1b" style="font-size: 20x"></div>
+			                <pre><div id="ascii1b" style="font-size: 20x"></div></pre>
 		</div>
 	</div>
 
@@ -537,7 +537,7 @@ button:focus {
     <div class = "gallerywrap" id="gallerywrap">
       <div class = "galleryviewtitlecontainer">
           <div style="left: 0; overflow:hidden; z-index: -1; position:absolute;" > <marquee behavior="scroll" scrollamount="15" direction="down" style="font-size: 11px" width="100%">                                                                                                                                                                                                                                                                                                                        
-                                                                 <div  id="ascii2"  margin: 0; ></div>                                                                                                                                                                                                                                                                                                                        
+                                                             <pre><div  id="ascii2"  margin: 0; ></div></pre>                                                                                                                                                                                                                                                                                                                        
 </marquee></div>
          <div id="gallerytitle" style="font-size:8vw; position:absolute; bottom: 0; left: 0; margin-bottom: 1%; margin-left: 2%">
           
@@ -634,11 +634,11 @@ $(window).on('load', function(){
   $(document).ready(function(){   
     
     $.get("logos/ascii1.txt", function(data){
-      $("#ascii1a").append("<pre>" + data + "</pre>");
-      $("#ascii1b").append("<pre>" + data + "</pre>");
+      $("#ascii1a").append(data);
+      $("#ascii1b").append(data);
     });
     $.get("logos/ascii2.txt", function(data){
-      $("#ascii2").append("<pre>" + data + "</pre>");
+      $("#ascii2").append(data);
     });
 
 
