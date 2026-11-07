@@ -485,7 +485,7 @@ button:focus {
 <!-- this is the lefthand column that doesnt change -->
   <div class="leftcolumn">
       <div class="navibox">
-          <img  src="logos/sommwhite.png" style="height: 30%">
+          <img  src="logos/sommwhite.png" onClick="prestochango('NA')"style="height: 30%">
           
         <div style="width:80%; margin-left: 10%; margin-right: 10%; display:flex; flex-direction: row; flex-wrap:wrap;">
         
@@ -750,7 +750,7 @@ current = youclicked;
         var J = document.getElementById("galleryfullsizewrap");
         J.style.display = "none";
         var t = document.getElementById("asciidiv");
-        t.style.display = "none";
+        t.style.display = "flex";
     }
     else if (chose === "about"){ 
         var T = document.getElementById("gallerywrap");
