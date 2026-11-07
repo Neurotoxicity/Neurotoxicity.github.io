@@ -445,8 +445,17 @@ button:focus {
 }
 
 
+.landingwalk{
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+@keyframes landingwalk{
+from {left: 0%;}
+  to {left: 100%;}
+}
+
 .marquee {
-		
+      height:70%;
 			display: flex ;
 			overflow: hidden ;
 			font-size:1em;
@@ -540,7 +549,7 @@ button:focus {
 		<div class="marquee__item" style="font-size: 15px; bottom:-50%">
 			                <pre><div id="ascii1b"></div></pre>
 		</div>
-  <img src="logos/landing.png" ; style="position: absolute; bottom:20%; min-height:256px; width:80vw; height:auto; object-fit: contain; image-rendering: pixelated; right:1%; clip-path: inset(0% 0% 0% 75%); animation: 1s linear infinite">
+  <img class="landingwalk" src="logos/landing.png" ; style="position: absolute; top:40vh; min-height:256px; width:80vw; height:auto; object-fit: contain; image-rendering: pixelated; right:1%; clip-path: inset(0% 0% 0% 75%);">
   </div>
    
 
