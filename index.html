@@ -725,13 +725,13 @@ function fullsizer(clicked){
           document.getElementById(temp2).display = "flex"
           $.get(temp).done(function(){ 
         // exists code
-        $("#temp2").src= temp
-        $("#temp2").display= "flex"
+        document.getElementById(temp2).src= temp
+        document.getElementById(temp2).display= "flex"
         console.log("retrieved: " + temp + " at "+ temp2)
     }).fail(function() { 
         // not exists code
-        $("#temp2").src= ""
-        $("#temp2").display= "none"
+        document.getElementById(temp2).src= ""
+        document.getElementById(temp2).display= "none"
         console.log("failed: " + temp + " at "+ temp2)
     })
         }
