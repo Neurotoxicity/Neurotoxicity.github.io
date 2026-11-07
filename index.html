@@ -49,8 +49,9 @@ body {
   .navibox {
   float: left;
   width: 100%;
-  height: 40vh;
   
+  height: auto;
+  min-height: 100% !important;
    
   border-bottom:2px solid black; 
  }
@@ -59,6 +60,8 @@ body {
   float: left;
   width: 100%;
   height: 55vh;
+  position:relative;
+  overflow:hidden;
 
  }
  .blogpostslist{
@@ -110,7 +113,8 @@ body {
   border-bottom:2px solid black; 
   display: table-cell;
   position: relative;
-  font-size: 4em
+  font-size: 4em;
+  letter-spacing: <length>
  }
  .galleryviewpicturecontainer {
   float: left;
@@ -193,30 +197,31 @@ body {
   left: 2%;
   word-break:break-word;
   flex: 0 0 20vw;
+  font-size: 1em;
  }
 .aboutjobsgif{
   image-rendering: pixelated;
-  height:60%; 
+  height:40%; 
+  width: auto;
   margin-right:5%;
   margin-top: 1%;
   margin-bottom: 1%;
   display:block;  
   float:right;
+  object-fit: contain;
 }
 .aboutjobstitle{
   
   display:block; 
   clear:right; 
-  font-size:1.3em
+  font-size:1.3em;
+  letter-spacing: <length>;
  
 }
  .aboutpagebottom{
   height:30vh;
   font-size: 8vw;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   border-top:2px solid black;
-  overflow: hidden;
   margin-bottom: 0px;
   
   
@@ -415,11 +420,44 @@ button:focus {
 .button-three {
   background-color: #cccccc;
   text-align: justify;
-  font-size: 1.3em;
-  display: block
+  font-size: 3vh;
+  display: block;
+  word-break:break-all;
+  height: 8vh;
+  width: 8vh;
+  
+  border-radius: 5px;
+  border: 2px solid #000000;
+  margin: 0.1vh;
   
   
 }
+
+
+.marquee {
+		
+			display: flex ;
+			overflow: hidden ;
+			font-size:1em;
+			width: 100%;
+		}
+		.marquee__item {
+			animation-duration: 30s ;
+			animation-iteration-count: infinite ;
+			animation-name: marquee-content ;
+			animation-timing-function: linear ;
+			
+		}
+		
+
+    @keyframes marquee-content {
+			from {
+				transform: translateX( 0% );
+			}
+			to {
+				transform: translateX( -100% );
+			}
+		}
 </style>
 <script>src="/js/jquery-4.0.0.min.js"</script>
 
@@ -447,9 +485,9 @@ button:focus {
 <!-- this is the lefthand column that doesnt change -->
   <div class="leftcolumn">
       <div class="navibox">
-          <img  src="logos/sommwhite.png" style="height: 40%">
-          <br>
-        <div style="width:60%; margin-left: 20%">
+          <img  src="logos/sommwhite.png" style="height: 30%">
+          
+        <div style="width:80%; margin-left: 10%; margin-right: 10%; display:flex; flex-direction: row; flex-wrap:wrap;">
         
         <button class="button-three" onClick="buttonchoice(1)">ILLUSTRATION</button>
         <button class="button-three" onClick="buttonchoice(2)">CHARACTER ART</button>
@@ -457,24 +495,22 @@ button:focus {
         <button class="button-three" onClick="buttonchoice(4)">PROPS</button>
         <button class="button-three" onClick="buttonchoice(5)">PIXEL ART</button> 
         <button class="button-three" onClick="buttonchoice(6)">BLOG</button>
-        <br> 
-        <button class="button-three" onClick="buttonchoice(7)" style = "font-size:0.8em">ABOUT//CONTACT</button> 
+        <button class="button-three" onClick="buttonchoice(7)" style = "width:16.2vh">ABOUT//CONTACT</button> 
         </div>
 
+        <div class=center>Latest Updates</div>
+        <div class = "blogpostslist" id="bloglist"></div>
         
         
-        <br><br><br>
       </div>
 
     <div class="blogcolumn">
-    <br><br><br>
-        <div style="width:60%; margin-left: 20%">This is some selected work from me, Calliope Parsch. Contact me for freelance work, I'll work hard for the money.<br><br><a href="mailto:cal.neurotoxin@gmail.com" style="color: #000000; text-decoration: none;"> Contact: cal.neurotoxin@gmail.com</a>
+    
+        <div style="width:60%; margin-left: 20%; word-break:break-word; position:absolute; bottom:15%;">This is some selected work from me, Calliope Parsch. Contact me for freelance work, I'll work hard for the money.<br><br><a href="mailto:cal.neurotoxin@gmail.com" style="color: #000000; text-decoration: none;"> <b>Contact: cal.neurotoxin@gmail.com</b></a>
  
         </div>
 
-        <br><br><br>
-        <div class=center>Latest Updates</div>
-        <div class = "blogpostslist" id="bloglist"></div>
+  
     </div>
     <div>website by Calliope Parsch</div>
   </div>
@@ -484,12 +520,26 @@ button:focus {
   <div class="rightchunk"> 
     <!-- what displays in here needs to change depending on which navigation button is pressed-->
     
+    <div class="marquee" id="asciidiv">
+		<div class="marquee__item">
+			              <pre id="ascii1a"></pre>                                                                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                                                                                        
+
+		</div>
+		<div class="marquee__item">
+			                <pre id="ascii1b"></pre>
+		</div>
+	</div>
 
 
 
     <div class = "gallerywrap" id="gallerywrap">
       <div class = "galleryviewtitlecontainer">
+          <div style="top: -20; left: 0; overflow:hidden; z-index: -1; position:absolute;" > <marquee behavior="scroll" scrollamount="15" direction="down" style="font-size: 11px" width="100%">                                                                                                                                                                                                                                                                                                                        
+                                                                 <pre  id="ascii2"  margin: 0; ></pre>                                                                                                                                                                                                                                                                                                                        
+</marquee></div>
          <div id="gallerytitle" style="position: absolute; bottom: 0; left: 0; margin-bottom: 1%; margin-left: 2%">
+          
         No_Gallery_Selected
       </div>
     </div>
@@ -538,7 +588,7 @@ button:focus {
       <div class = "aboutwrap" id="aboutwrap">
         <div class = "aboutpagetop"></div>
         <div class = "aboutpagemiddle">
-          <div class = "aboutjobs" style="margin-left:2%"> <h1>Calliope Parsch</h1><div  onclick="mailto(cal.neurotoxin@gmail.com)"><h2>cal.neurotoxin@gmail.com</h2></div><br>Past Clients: Rubeki Games, Only By Midnight, Creature.Love, Putrid//Sharp</div>
+          <div class = "aboutjobs" style="margin-left:2%"> <b style="font-size:2em">Calliope Parsch</b><br><br><a href="mailto:cal.neurotoxin@gmail.com" style="color: #000000; text-decoration: none;"> <b style="font-size:1.4em">cal.neurotoxin@gmail.com</b></a><br><br><br>Past Clients: Rubeki Games, Only By Midnight, Creature.Love, Putrid//Sharp</div>
           
           <div class = "aboutjobs"><img class="aboutjobsgif" src="logos/running for website.gif"><div class="aboutjobstitle">Concept / Pixel artist</div><br><div onclick="window.open('https://creature.love/')"> Creature.Love</div><br> feb2026-current</div>
           <div class = "aboutjobs"><img class="aboutjobsgif" src="logos/squirmer.gif"><div class="aboutjobstitle">Environment / Pixel artist</div><br><div onclick="window.open('https://putridsharp.cargo.site/')"> Putrid/Sharp</div><br> jan2026-current</div>
@@ -546,7 +596,7 @@ button:focus {
         </div>
         <div class = "aboutpagebottom">
 
-          <div style="position: absolute; bottom: 1%; left: 0; margin-bottom: 1%; margin-top: 1%; margin-left: 2%; margin-right:5%; Width=60vw">
+          <div>
           About//Contact
       </div>
         </div>
@@ -578,11 +628,19 @@ const blogpostno = 3
 $(window).on('load', function(){
   
   var fileExt = ".txt";    
+  
+  load the ascii art into asciidiv
   $(document).ready(function(){   
+    $.get("logos/ascii1.txt", function(data){
+      $("#ascii1a").innertext(data);
+      $("#ascii1b").innertext(data);
+    });
+    $.get("logos/ascii2.txt", function(data){
+      $("#ascii2a").innertext(data);
+    });
 
-    // fetch('public/blog/head.txt')
-       // .then(data => data.text()).then((data) =>
-       // document.getElementById('bloghere').innerHTML = data)
+
+
 
     for (let  b = (blogpostno); b > 0; b--){
           
@@ -689,6 +747,8 @@ current = youclicked;
         I.style.display = "none";
         var J = document.getElementById("galleryfullsizewrap");
         J.style.display = "none";
+        var t = document.getElementById("asciidiv");
+        t.style.display = "none";
     }
     else if (chose === "about"){ 
         var T = document.getElementById("gallerywrap");
@@ -697,6 +757,8 @@ current = youclicked;
         H.style.display = "none";
         var J = document.getElementById("galleryfullsizewrap");
         J.style.display = "none";
+        var t = document.getElementById("asciidiv");
+        t.style.display = "none";
         var I = document.getElementById("aboutwrap");
         I.style.display = "block";
 
@@ -708,6 +770,9 @@ current = youclicked;
         H.style.display = "none";
         var J = document.getElementById("galleryfullsizewrap");
         J.style.display = "none";
+
+        var t = document.getElementById("asciidiv");
+        t.style.display = "none";
         var I = document.getElementById("blogwrap");
         I.style.display = "flex";
 
@@ -735,6 +800,8 @@ current = youclicked;
         T.style.display = "block";
         var J = document.getElementById("galleryfullsizewrap");
         J.style.display = "none";
+        var t = document.getElementById("asciidiv");
+        t.style.display = "none";
 
         document.getElementById("gallerytitle").innerText = chose
 
