@@ -132,7 +132,7 @@ body {
     margin: 1%;
     border-radius: 25px;
     object-fit: cover;
-    display: block;
+    display: flex;
  }
 
 .galleryviewfullsizemiddle{
@@ -142,6 +142,7 @@ body {
  }
  .galleryviewfullsizeright{
   width: 4vw;
+  display:block;
   margin-left:1%;
   margin-right:3%;
   flex: auto;
@@ -521,8 +522,8 @@ button:focus {
   <div class="rightchunk"> 
     <!-- what displays in here needs to change depending on which navigation button is pressed-->
     
-    <div class="marquee" id="asciidiv">
-		<div class="marquee__item" style="font-size: 15px">
+    <div class="marquee" id="asciidiv" style="bottom:-50%">
+		<div class="marquee__item" style="font-size: 15px;">
 			              <pre><div id="ascii1a"></div></pre>                                                                                                                                                                                                                                                                                                       
                                                                                                                                                                                                                                                                                                                         
 
@@ -563,7 +564,8 @@ button:focus {
         <div><img id= "fullsizeimg" src="" ></div>
         <div id="addendaimg"> <img id = "addimg1" src=""><img id = "addimg2" src=""><img id = "addimg3" src=""></div>
       </div>
-      <div class = "galleryviewfullsizeright"><div style="font-size: 8em; line-height: 0.7; word-break: break-all;">Fullsize</div><div id="deschere"  style = "word-break: break-word">img desc</div><div style="font-size:2em;"onClick="prestochango(current)">(return)</div></div>
+      <div class = "galleryviewfullsizeright"><div style="font-size: 8vw; line-height: 0.7; word-break: break-all;">Fullsize</div><div id="deschere"  style = "word-break: break-word">img desc</div><b style="font-size:2vw;"onClick="prestochango(current)">(return)</b><br>
+      <button class="button-three" style="height: 4vh; width: 4vh; display:inline-block" onClick="prestochango(fullsizer(current2-1))">&lt;-</button><button class="button-three" style="height: 4vh; width: 4vh; display:inline-block;" onClick="prestochango(fullsizer(current2+1))">-&gt;</button></div></div>
       
       </div>
 
@@ -672,6 +674,7 @@ $(window).on('load', function(){
 
 <script>
 var current = "NA"
+var current2 = "NA"
 
   function hide() {
             document.getElementById("gallerywrap").style.display = "none";
@@ -681,6 +684,12 @@ var current = "NA"
 
 
 function fullsizer(clicked){
+  if (clicked < 1){
+    clicked=8;
+  }
+  if (clicked >8){
+    clicked=1;
+  }
   var T = document.getElementById("gallerywrap");
         T.style.display = "none";
   
@@ -700,7 +709,8 @@ function fullsizer(clicked){
   var I = document.getElementById("galleryfullsizewrap");
         I.style.display = "flex";
 
-  
+  current2 = clicked;
+
    let betty = ["a","b","c"];
 //this code is supposed to figure out if theres an addenda image in the addenda folder 
 //and then feed its filepath to the addenda1 img divs in the body
@@ -713,15 +723,17 @@ function fullsizer(clicked){
           let temp = (((addendapath).concat(p+1)).concat(betty[p])).concat(".jpg")
           let temp2 = ("addimg").concat(p+1)
           $.get(temp)
-          document.getElementById(temp2).display = "none"
+          document.getElementById(temp2).display = "flex"
     .done(function() { 
         // exists code
         $("#temp2").src= temp
         $("#temp2").display= "flex"
+        console.log("retrieved: " + temp + " at "+ temp2)
     }).fail(function() { 
         // not exists code
         $("#temp2").src= ""
         $("#temp2").display= "none"
+        ("failed: " + temp + " at "+ temp2)
     })
         }
   
