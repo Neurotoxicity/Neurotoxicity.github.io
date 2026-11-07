@@ -633,8 +633,8 @@ $(window).on('load', function(){
   $(document).ready(function(){   
     
     $.get("logos/ascii1.txt", function(data){
-      $("#ascii1a").append(data);
-      $("#ascii1b").append(data);
+      $("#ascii1a").append("<pre>" + data + "</pre>");
+      $("#ascii1b").append("<pre>" + data + "</pre>");
     });
 
 
