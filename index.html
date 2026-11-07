@@ -657,12 +657,10 @@ $(window).on('load', function(){
         }
 
       $.get("logos/ascii1.txt", function(data){
-      $("#ascii1a").innertext = data;
-      $("#ascii1b").innertext = data;
+      document.getElementById("ascii1a").innertext = data;
+      document.getElementById("ascii1b").innertext = data;
     });
-    $.get("logos/ascii2.txt", function(data){
-      $("#ascii2a").innertext = data;
-    });
+   
          
     });
   });
@@ -751,6 +749,9 @@ current = youclicked;
         J.style.display = "none";
         var t = document.getElementById("asciidiv");
         t.style.display = "flex";
+         $.get("logos/ascii2.txt", function(data){
+      document.getElementById("ascii2a").innertext = data;
+    });
     }
     else if (chose === "about"){ 
         var T = document.getElementById("gallerywrap");
