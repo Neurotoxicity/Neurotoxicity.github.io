@@ -725,16 +725,16 @@ function fullsizer(clicked){
           $.get(temp).done(function(){ 
         // exists code
         
-        console.log("attempt: " + temp + " at "+ temp2);
+        //console.log("attempt: " + temp + " at "+ temp2);
         document.getElementById(temp2).src= temp;
         document.getElementById(temp2).style.display= "flex";
-        console.log("retrieved: " + temp + " at "+ temp2);
+        //console.log("retrieved: " + temp + " at "+ temp2);
     }).fail(function() { 
         // not exists code
-        console.log("attempt: " + temp + " at "+ temp2);
+        //console.log("attempt: " + temp + " at "+ temp2);
         document.getElementById(temp2).src= "";
         document.getElementById(temp2).style.display= "none";
-        console.log("failed: " + temp + " at "+ temp2);
+        //console.log("failed: " + temp + " at "+ temp2);
     })
         }
 current = current;
