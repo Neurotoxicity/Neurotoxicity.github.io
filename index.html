@@ -722,7 +722,7 @@ function fullsizer(clicked){
   for (let p = 0; p < 3; p++){
           let temp = ((addendapath).concat(betty[p])).concat(".jpg")
           let temp2 = ("addimg").concat(p)
-          document.getElementById(temp2).display = "flex"
+          
           $.get(temp).done(function(){ 
         // exists code
         document.getElementById(temp2).src= temp;
