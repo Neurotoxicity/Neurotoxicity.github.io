@@ -522,12 +522,12 @@ button:focus {
     
     <div class="marquee" id="asciidiv">
 		<div class="marquee__item" >
-			              <div id="ascii1a">ASCII1A_PLACEHOLDER</div>                                                                                                                                                                                                                                                                                                       
+			              <div id="ascii1a"></div>                                                                                                                                                                                                                                                                                                       
                                                                                                                                                                                                                                                                                                                         
 
 		</div>
 		<div class="marquee__item">
-			                <div id="ascii1b">ASCII1A_PLACEHOLDER</div>
+			                <div id="ascii1b"></div>
 		</div>
 	</div>
 
@@ -536,7 +536,7 @@ button:focus {
     <div class = "gallerywrap" id="gallerywrap">
       <div class = "galleryviewtitlecontainer">
           <div style="top: -20; left: 0; overflow:hidden; z-index: -1; position:absolute;" > <marquee behavior="scroll" scrollamount="15" direction="down" style="font-size: 11px" width="100%">                                                                                                                                                                                                                                                                                                                        
-                                                                 <div  id="ascii2"  margin: 0; >ASCII2_PLACEHOLDER</div>                                                                                                                                                                                                                                                                                                                        
+                                                                 <div  id="ascii2"  margin: 0; ></div>                                                                                                                                                                                                                                                                                                                        
 </marquee></div>
          <div id="gallerytitle" style="font-size:8vw; position:absolute; bottom: 0; left: 0; margin-bottom: 1%; margin-left: 2%">
           
@@ -636,7 +636,9 @@ $(window).on('load', function(){
       $("#ascii1a").append("<pre>" + data + "</pre>");
       $("#ascii1b").append("<pre>" + data + "</pre>");
     });
-
+    $.get("logos/ascii2.txt", function(data){
+      $("#ascii2").append("<pre>" + data + "</pre>");
+    });
 
 
     for (let  b = (blogpostno); b > 0; b--){
