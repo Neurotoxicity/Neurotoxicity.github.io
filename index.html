@@ -3,7 +3,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="js/jquery-4.0.0.min.js"></script>
-<script src="js/fs.js"></script>
+
  
 
 
@@ -723,8 +723,7 @@ function fullsizer(clicked){
           let temp = (((addendapath).concat(p+1)).concat(betty[p])).concat(".jpg")
           let temp2 = ("addimg").concat(p+1)
           document.getElementById(temp2).display = "flex"
-          $.get(temp)
-        .done(function() { 
+          $.get(temp).done(function(){ 
         // exists code
         $("#temp2").src= temp
         $("#temp2").display= "flex"
