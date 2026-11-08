@@ -33,13 +33,15 @@ body {
 .leftcolumn {
   float: left;
   width: 20vw;
-  height: 100%;
+  height: 100vh;
   left: 0px;
   border-right:2px solid black;
   padding-bottom: 1%;
   min-width: 100px;
   display:flex;
   flex-direction: column;
+  word-break:break-word;
+  font-size: calc(10px + 0.4vw);
   
  }
  /* denotes the part of the screen that isnt the navigation box*/
@@ -54,18 +56,26 @@ body {
   .navibox {
   float: left;
   width: 100%;
-  
+  display:flex;
+  flex-direction: column;
    
   border-bottom:2px solid black; 
  }
 
  .blogcolumn {
   float: left;
-  width: 100%;
-  height:50vh;
-  
+  width: 60%;
+  display:flex;
+  word-break:break-word;
+  font-size: calc(10px + 0.4vw);
   position:relative;
   overflow:hidden;
+  padding-left: 20%;
+  line-height: 90%;
+  padding-top:20%;
+  flex: 1 1 auto;
+
+  
   
  }
  .blogpostslist{
@@ -209,8 +219,9 @@ body {
   overflow-y:auto;
   min-height:30vh;
   height:auto;
-  word-break:break-word;
+  
   flex: 0 0 20vw;
+  word-break:break-word;
   font-size: calc(10px + 0.5vw);
  }
 .aboutjobsgif{
@@ -550,7 +561,8 @@ from {
       <div class="navibox">
           <img  src="logos/sommwhite.png" onClick="prestochango('NA')"style="height: 30%">
           
-        <div style="width:80%; margin-left: 10%; margin-right: 10%; display:flex; flex-direction: row; flex-wrap:wrap;">
+      
+      <div style="width:80%; margin-left: 10%; margin-right: 10%; display:flex; flex-direction: row; flex-wrap:wrap;">
         
         <button class="button-three" onClick="buttonchoice(1)">ILLUSTRATION</button>
         <button class="button-three" onClick="buttonchoice(2)">CHARACTER_ART</button>
@@ -563,19 +575,21 @@ from {
 
         <div class=center>Latest Updates</div>
         <div class = "blogpostslist" id="bloglist"></div><br>
+        <a href="mailto:cal.neurotoxin@gmail.com" style="color: #000000; text-decoration: none;"><b>Contact: cal.neurotoxin@gmail.com</b>  </a>
         
         
       </div>
 
     <div class="blogcolumn">
     
-        <div style="width:60%; margin-left: 20%; word-break:break-word; position:absolute; bottom:15%;">This is some selected work from me, Calliope Parsch. Contact me for freelance work, I'll work hard for the money.<br><br><a href="mailto:cal.neurotoxin@gmail.com" style="color: #000000; text-decoration: none;"><b>Contact: cal.neurotoxin@gmail.com</b></a>
+        This is some selected work from me, Calliope Parsch. Contact me for freelance work, I'll work hard for the money.
+          
  
-        </div>
+        
 
   
     </div>
-    <div>website by Calliope Parsch</div>
+    
   </div>
 
   
@@ -666,7 +680,8 @@ from {
         <button class="button-four" onclick=" window.open('https://www.x.com/strangerz0ne', '_blank'); return false;">twt</button>
         <button class="button-four" onclick=" window.open('https://www.instagram.com/strangerz0ne/', '_blank'); return false;">insta</button>
         <button class="button-four" onclick=" window.open('https://neurotoxicity.itch.io/', '_blank'); return false;">itch</button>
-      <button class="button-four" onclick=" window.open('https://bsky.app/profile/neurotoxicity.bsky.social', '_blank'); return false;">bsky</button>
+        <button class="button-four" onclick=" window.open('https://bsky.app/profile/neurotoxicity.bsky.social', '_blank'); return false;">bsky</button>
+        
     </div>
 
 
