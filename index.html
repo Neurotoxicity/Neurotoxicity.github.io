@@ -823,7 +823,7 @@ function fullsizer(clicked){
   
   fetch(descpath)
        .then(data => data.text()).then((data) =>
-       document.getElementsById('deschere').innerText = data)
+       document.getElementById('deschere').innerText = data)
 
 
   var I = document.getElementById("galleryfullsizewrap");
