@@ -825,7 +825,7 @@ function fullsizer(clicked){
        .then(data => data.text()).then((data) =>
        document.getElementById('deschere').innerText = data),
   
-       document.getElementById('deschere2').innerText = (("<pre>").concat(document.getElementById('deschere').innerText)).concat("</pre>");
+       document.getElementById('deschere2').innerText = (("<pre>").concat(data)).concat("</pre>");
 
   var I = document.getElementById("galleryfullsizewrap");
         I.style.display = "flex";
