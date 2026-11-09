@@ -656,7 +656,7 @@ from {
       <div class = "galleryfullsizewrap" id = "galleryfullsizewrap">
       <div class = "galleryviewfullsizemiddle" style= "overflow-y:scroll; scrollbar-width: none;">
         <div id="phonedesc" style="text-align:center"><button class="button-three" style="height: 4vh; width: 20vw; display:inline-block" onClick="fullsizer(current2-1)">&lt;-</button><b style="font-size:2vw;"onClick="prestochango(current)">(return)</b><button class="button-three" style="height: 4vh; width: 20vw; display:inline-block;" onClick="fullsizer(current2+1)">-&gt;</button>
-          <div id="deschere2" style = "word-break: break-word; font-size:2vh;">img desc</div></div>
+          <div id="descalsohere" style = "word-break: break-word; font-size:2vh;">img desc</div></div>
         <div><img id= "fullsizeimg" src="" ></div>
         <div id="addendaimg"> <img id = "addimg1" src=""><img id = "addimg2" src=""><img id = "addimg3" src="">
         
@@ -860,12 +860,12 @@ function fullsizer(clicked){
 current = current;
 current2 = clicked;
 
-(document.getElementById("phonedesc")).style.display = "block";
-(document.getElementById("deskdesc")).style.display = "none";
-if(window.innerHeight < window.innerWidth){
-    (document.getElementById("phonedesc")).style.display = "none";
-    (document.getElementById("deskdesc")).style.display = "block";
-        }
+//(document.getElementById("phonedesc")).style.display = "block";
+//(document.getElementById("deskdesc")).style.display = "none";
+//if(window.innerHeight < window.innerWidth){
+    //(document.getElementById("phonedesc")).style.display = "none";
+    //(document.getElementById("deskdesc")).style.display = "block";
+       // }
 
 
 
