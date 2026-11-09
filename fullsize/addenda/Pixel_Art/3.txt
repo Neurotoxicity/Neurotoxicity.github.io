@@ -1,3 +1,3 @@
-[Placeholder Title]
-[20XX]
-[Placeholder Body]
+Character Animations
+2026
+A suite of character animations I made for an unannounced platformer project from Creature.Love. 
