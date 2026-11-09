@@ -610,7 +610,7 @@ from {
     <!-- what displays in here needs to change depending on which navigation button is pressed-->
     
     <div class="marquee" id="asciidiv">
-		<div class="marquee__item" style="font-size: 15px; bottom:-50%">
+		<div class="marquee__item" style="font-size: 15px; bottom:-50%;right:0;width:100%">
 			              <pre><div id="ascii1a"></div></pre>                                                                                                                                                                                                                                                                                                       
                                                                                                                                                                                                                                                                                                                         
 
@@ -823,9 +823,8 @@ function fullsizer(clicked){
   
   fetch(descpath)
        .then(data => data.text()).then((data) =>
-       document.getElementById('deschere').innerText = data),
-  
-       document.getElementById('deschere2').innerText = (("<pre>").concat(data)).concat("</pre>");
+       document.getElementById('deschere').innerText = data,
+       document.getElementById('deschere2').innerText =data);
 
   var I = document.getElementById("galleryfullsizewrap");
         I.style.display = "flex";
