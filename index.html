@@ -656,7 +656,7 @@ from {
       <div class = "galleryfullsizewrap" id = "galleryfullsizewrap">
       <div class = "galleryviewfullsizemiddle" style= "overflow-y:scroll; scrollbar-width: none;">
         <div id="phonedesc" style="text-align:center"><button class="button-three" style="height: 4vh; width: 20vw; display:inline-block" onClick="fullsizer(current2-1)">&lt;-</button><b style="font-size:2vw;"onClick="prestochango(current)">(return)</b><button class="button-three" style="height: 4vh; width: 20vw; display:inline-block;" onClick="fullsizer(current2+1)">-&gt;</button>
-          <div id="deschere2" class="deschere" style = "word-break: break-word; font-size:2vh;">img desc</div></div>
+          <div id="deschere2" style = "word-break: break-word; font-size:2vh;">img desc</div></div>
         <div><img id= "fullsizeimg" src="" ></div>
         <div id="addendaimg"> <img id = "addimg1" src=""><img id = "addimg2" src=""><img id = "addimg3" src="">
         
@@ -665,7 +665,7 @@ from {
 
 
       </div>
-      <div class = "galleryviewfullsizeright" id="deskdesc"><div style="font-size: 8vw; line-height: 0.7; word-break: break-all;">Fullsize</div><div id="deschere" class="deschere" style = "word-break: break-word">img desc</div><b style="font-size:2vw;"onClick="prestochango(current)">(return)</b><br>
+      <div class = "galleryviewfullsizeright" id="deskdesc"><div style="font-size: 8vw; line-height: 0.7; word-break: break-all;">Fullsize</div><div id="deschere" style = "word-break: break-word">img desc</div><b style="font-size:2vw;"onClick="prestochango(current)">(return)</b><br>
       <button class="button-three" style="height: 4vh; width: 4vh; display:inline-block" onClick="fullsizer(current2-1)">&lt;-</button><button class="button-three" style="height: 4vh; width: 4vh; display:inline-block;" onClick="fullsizer(current2+1)">-&gt;</button></div></div></div>
       
       
@@ -823,7 +823,7 @@ function fullsizer(clicked){
   
   fetch(descpath)
        .then(data => data.text()).then((data) =>
-       document.getElementsByClassName('deschere').innerText = data,)
+       document.getElementsById('deschere').innerText <- document.getElementsById('deschere2').innerText <- data,)
   
 
   var I = document.getElementById("galleryfullsizewrap");
