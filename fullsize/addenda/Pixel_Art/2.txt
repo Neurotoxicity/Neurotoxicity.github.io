@@ -1,3 +1,3 @@
 Selected Putrid/Sharp Environments
 2026
-Some bits and pieces I made for Putrid/Sharp. Dark and gloomy mouldering rooms... stuff like that. The protagonist walks through these and gets attacked by monsters. If I was him I'd maybe have a shower with a lotof soap when I got home.
+Some bits and pieces of the environments for Putrid/Sharp. Dark and gloomy mouldering rooms... stuff like that. It was challenging at first to try and make legible images because the target aesthetic of the game is like, super grimy and messy, but the resolution is very low... Also the super-limited colour palette (6 colours!). But I got the hang of it. 
