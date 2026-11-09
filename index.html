@@ -630,7 +630,7 @@ from {
 
     <div class = "gallerywrap" id="gallerywrap">
       <div class = "galleryviewtitlecontainer">
-          <div style="left: 0; overflow:hidden; z-index: -1; position:absolute;" > <marquee behavior="scroll" scrollamount="15" direction="down" style="font-size: 11px" width="100%">                                                                                                                                                                                                                                                                                                                        
+          <div style="left: 0; overflow:hidden; height:100%; z-index: -1; position:absolute;" > <marquee behavior="scroll" scrollamount="15" direction="down" style="font-size: 11px" width="100%">                                                                                                                                                                                                                                                                                                                        
                                                              <pre><div  id="ascii2"  margin: 0; ></div></pre>                                                                                                                                                                                                                                                                                                                        
 </marquee></div>
          <div id="gallerytitle" style="font-size:6vw; position:absolute; bottom: 0; left: 0; margin-bottom: 1%; margin-left: 2%">
@@ -655,7 +655,8 @@ from {
 
       <div class = "galleryfullsizewrap" id = "galleryfullsizewrap">
       <div class = "galleryviewfullsizemiddle" style= "overflow-y:scroll; scrollbar-width: none;">
-        <div id="phonedesc" style="text-align:center"><button class="button-three" style="height: 4vh; width: 20vw; display:inline-block" onClick="fullsizer(current2-1)">&lt;-</button><b style="font-size:2vw;"onClick="prestochango(current)">(return)</b><button class="button-three" style="height: 4vh; width: 20vw; display:inline-block;" onClick="fullsizer(current2+1)">-&gt;</button><div id="deschere2"  style = "word-break: break-word; font-size:2vh;">img desc</div></div>
+        <div id="phonedesc" style="text-align:center"><button class="button-three" style="height: 4vh; width: 20vw; display:inline-block" onClick="fullsizer(current2-1)">&lt;-</button><b style="font-size:2vw;"onClick="prestochango(current)">(return)</b><button class="button-three" style="height: 4vh; width: 20vw; display:inline-block;" onClick="fullsizer(current2+1)">-&gt;</button>
+          <div id="deschere2"  style = "word-break: break-word; font-size:2vh;">img desc</div></div>
         <div><img id= "fullsizeimg" src="" ></div>
         <div id="addendaimg"> <img id = "addimg1" src=""><img id = "addimg2" src=""><img id = "addimg3" src="">
         
@@ -823,7 +824,7 @@ function fullsizer(clicked){
   fetch(descpath)
        .then(data => data.text()).then((data) =>
        document.getElementById('deschere').innerText = data,)
-  document.getElementById('deschere2').innerText = document.getElementById('deschere').innerText;
+  document.getElementById('deschere2').innerText = (("<pre>").concat(document.getElementById('deschere').innerText)).concat("</pre>");
 
   var I = document.getElementById("galleryfullsizewrap");
         I.style.display = "flex";
