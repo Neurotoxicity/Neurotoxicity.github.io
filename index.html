@@ -48,8 +48,9 @@ body {
 .rightchunk {
   float: left;
   width: 60vw;
-  height: 90%;
+  height: 80%;
   padding-bottom: 2%;
+  top:0;
  }
 
  
@@ -59,18 +60,20 @@ body {
   display:flex;
   flex-direction: column;
    
-  border-bottom:2px solid black; 
+  
  }
 
  .blogcolumn {
+  border-top:2px solid black; 
   float: left;
-  width: 60%;
+  
   display:flex;
   word-break:break-word;
   font-size: calc(10px + 0.4vw);
   position:relative;
   overflow:hidden;
   padding-left: 20%;
+  padding-right:20%;
   line-height: 90%;
   padding-top:20%;
   flex: 1 1 auto;
@@ -151,6 +154,7 @@ body {
 
 .galleryviewfullsizemiddle{
   width:65vw;
+  height:99vh;
   border-right:2px solid black; 
   flex: 0 0 65vw;
  
@@ -532,6 +536,14 @@ from {
 				transform: translateX( 0% );
 			}
 		}
+
+
+     .expandlogo{
+       display : none;
+   }
+   imagecard:hover ~ .expandlogo {
+       display : block;
+   }
 </style>
 <script>src="/js/jquery-4.0.0.min.js"</script>
 
@@ -580,7 +592,7 @@ from {
         
       </div>
 
-    <div class="blogcolumn">
+    <div class="blogcolumn" id="blogcolumn">
     
         This is some selected work from me, Calliope Parsch. Contact me for freelance work, I'll work hard for the money.
           
@@ -628,7 +640,8 @@ from {
     </div>
       
       <div class = "galleryviewpicturecontainer">
-        <div class = "imagecard" onClick="fullsizer(1)"><img   id = "img1" src=""></div>
+        <!--remember to write some code so a "click here to expand" icon appears when you mouseover these-->
+        <div class = "imagecard" onClick="fullsizer(1)" ><img   id = "img1" src=""></div>
         <div class = "imagecard" onClick="fullsizer(2)"><img   id = "img2" src=""></div>
         <div class = "imagecard" onClick="fullsizer(3)"><img   id = "img3" src=""></div>
         <div class = "imagecard" onClick="fullsizer(4)"><img   id = "img4" src=""></div>
@@ -642,11 +655,17 @@ from {
 
       <div class = "galleryfullsizewrap" id = "galleryfullsizewrap">
       <div class = "galleryviewfullsizemiddle" style= "overflow-y:scroll; scrollbar-width: none;">
+        <div id="phonedesc" style="text-align:center"><button class="button-three" style="height: 4vh; width: 20vw; display:inline-block" onClick="fullsizer(current2-1)">&lt;-</button><b style="font-size:2vw;"onClick="prestochango(current)">(return)</b><button class="button-three" style="height: 4vh; width: 20vw; display:inline-block;" onClick="fullsizer(current2+1)">-&gt;</button><div id="deschere2"  style = "word-break: break-word; font-size:2vh;">img desc</div></div>
         <div><img id= "fullsizeimg" src="" ></div>
-        <div id="addendaimg"> <img id = "addimg1" src=""><img id = "addimg2" src=""><img id = "addimg3" src=""></div>
+        <div id="addendaimg"> <img id = "addimg1" src=""><img id = "addimg2" src=""><img id = "addimg3" src="">
+        
+          
+    </div>
+
+
       </div>
-      <div class = "galleryviewfullsizeright"><div style="font-size: 8vw; line-height: 0.7; word-break: break-all;">Fullsize</div><div id="deschere"  style = "word-break: break-word">img desc</div><b style="font-size:2vw;"onClick="prestochango(current)">(return)</b><br>
-      <button class="button-three" style="height: 4vh; width: 4vh; display:inline-block" onClick="fullsizer(current2-1)">&lt;-</button><button class="button-three" style="height: 4vh; width: 4vh; display:inline-block;" onClick="fullsizer(current2+1)">-&gt;</button></div></div>
+      <div class = "galleryviewfullsizeright" id="deskdesc"><div style="font-size: 8vw; line-height: 0.7; word-break: break-all;">Fullsize</div><div id="deschere"  style = "word-break: break-word">img desc</div><b style="font-size:2vw;"onClick="prestochango(current)">(return)</b><br>
+      <button class="button-three" style="height: 4vh; width: 4vh; display:inline-block" onClick="fullsizer(current2-1)">&lt;-</button><button class="button-three" style="height: 4vh; width: 4vh; display:inline-block;" onClick="fullsizer(current2+1)">-&gt;</button></div></div></div>
       
       
 
@@ -738,6 +757,12 @@ $(window).on('load', function(){
     });
 
 
+    if(window.innerHeight > window.innerWidth){
+    (document.getElementById("blogcolumn")).style.display = "none";
+    
+        }
+
+
     for (let  b = (blogpostno); b > 0; b--){
           
           var target = ("public/blog/".concat(b)).concat(".txt");
@@ -797,8 +822,8 @@ function fullsizer(clicked){
   
   fetch(descpath)
        .then(data => data.text()).then((data) =>
-       document.getElementById('deschere').innerText = data)
-
+       document.getElementById('deschere').innerText = data,)
+  document.getElementById('deschere2').innerText = document.getElementById('deschere').innerText;
 
   var I = document.getElementById("galleryfullsizewrap");
         I.style.display = "flex";
@@ -833,6 +858,16 @@ function fullsizer(clicked){
         }
 current = current;
 current2 = clicked;
+
+(document.getElementById("phonedesc")).style.display = "block";
+(document.getElementById("deskdesc")).style.display = "none";
+if(window.innerHeight < window.innerWidth){
+    (document.getElementById("phonedesc")).style.display = "none";
+    (document.getElementById("deskdesc")).style.display = "block";
+        }
+
+
+
 }
 
  
