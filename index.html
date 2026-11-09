@@ -824,7 +824,8 @@ function fullsizer(clicked){
   
   fetch(descpath)
        .then(data => data.text()).then((data) =>
-       document.getElementById('deschere').innerText = data)
+       document.getElementById('deschere').innerText = data).then((data) =>
+       document.getElementById('descalsohere').innerText = data)
 
 
   var I = document.getElementById("galleryfullsizewrap");
@@ -861,12 +862,12 @@ function fullsizer(clicked){
 current = current;
 current2 = clicked;
 
-(document.getElementById("phonedesc")).style.display = "block";
-(document.getElementById("deskdesc")).style.display = "none";
-if(window.innerHeight < window.innerWidth){
-    (document.getElementById("phonedesc")).style.display = "none";
-    (document.getElementById("deskdesc")).style.display = "block";
-        }
+//(document.getElementById("phonedesc")).style.display = "block";
+//(document.getElementById("deskdesc")).style.display = "none";
+//if(window.innerHeight < window.innerWidth){
+   // (document.getElementById("phonedesc")).style.display = "none";
+    //(document.getElementById("deskdesc")).style.display = "block";
+      //  }
 
 
 
