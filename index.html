@@ -824,7 +824,8 @@ function fullsizer(clicked){
   
   //replace fullsize file ext with gif if it 404s off the jpg
           $.get(filepath).fail(function() { 
-        target.src = (((("fullsize/").concat(current)).concat("/")).concat(clicked)).concat(".gif")
+        console.log(filepath " get failed")
+            target.src = (((("fullsize/").concat(current)).concat("/")).concat(clicked)).concat(".gif")
         
     })
 
