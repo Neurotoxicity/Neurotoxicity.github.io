@@ -829,6 +829,8 @@ function fullsizer(clicked){
   let addendapath = ((("fullsize/addenda/").concat(current)).concat("/")).concat(clicked);
   let descpath = (((("fullsize/addenda/").concat(current)).concat("/")).concat(clicked)).concat(".txt");
 
+  let gifpath = (((("fullsize/").concat(current)).concat("/")).concat(clicked)).concat(".gif");
+
   let target = document.getElementById("fullsizeimg");
   
   target.src = filepath;
@@ -880,10 +882,9 @@ $.get(filepath).done(function(){
         console.log("found "+ filepath);
     }).fail(function() { 
         console.log("didnt find" + filepath);
-        console.log(typeof filepath);
-        console.log("with" + gifreplacer(String(filepath)));
-        let newpath = gifreplacer(String(filepath));
-        target.src= newpath;
+        console.log("replace it with "+ gifpath);
+        
+        target.src= gifpath;
         
     })
 
