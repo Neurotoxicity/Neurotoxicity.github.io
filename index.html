@@ -825,6 +825,7 @@ function fullsizer(clicked){
   let descpath = (((("fullsize/addenda/").concat(current)).concat("/")).concat(clicked)).concat(".txt");
 
   let target = document.getElementById("fullsizeimg");
+  
   target.src = filepath;
   
 
@@ -867,7 +868,17 @@ function fullsizer(clicked){
     })
         }
 
-
+$.get(filepath).done(function(){ 
+        // exists code
+        
+        console.log("found "+ filepath);
+    }).fail(function() { 
+        console.log("didnt find" + filepath);
+        console.log("replace" + target);
+        console.log("with" + gifreplacer(target));
+        document.getElementById(target).src= gifreplacer(target);
+        
+    })
 
 
 current = current;
