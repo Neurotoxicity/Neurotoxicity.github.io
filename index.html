@@ -883,7 +883,7 @@ $.get(filepath).done(function(){
         console.log(typeof target);
         console.log("with" + gifreplacer(String(target)));
         let newpath = gifreplacer(String(filepath));
-        document.getElementById(target).src= newpath;
+        target.src= newpath;
         
     })
 
