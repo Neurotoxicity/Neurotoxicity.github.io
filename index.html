@@ -43,6 +43,7 @@ body {
   word-break:break-word;
   font-size: calc(10px + 0.4vw);
   
+  
  }
  /* denotes the part of the screen that isnt the navigation box*/
 .rightchunk {
@@ -59,7 +60,7 @@ body {
   width: 100%;
   display:flex;
   flex-direction: column;
-   
+  /*background-image: url("logos/bg.jpg");*/
   
  }
 
@@ -658,7 +659,7 @@ from {
       <div class = "galleryviewfullsizemiddle" style= "overflow-y:scroll; scrollbar-width: none;">
         <div id="phonedesc" style="text-align:center"><button class="button-three" style="height: 4vh; width: 20vw; display:inline-block" onClick="fullsizer(current2-1)">&lt;-</button><b style="font-size:2vw;"onClick="prestochango(current)">(return)</b><button class="button-three" style="height: 4vh; width: 20vw; display:inline-block;" onClick="fullsizer(current2+1)">-&gt;</button>
           <div id="descalsohere" style = "word-break: break-word; font-size:2vh;">img desc</div></div>
-        <div><img id= "fullsizeimg" src="" ></div>
+        <div><img id= "fullsizeimg" src="logos/placeholder.jpg" onerror="this.onerror=null; this.src= gifreplacer(this.src)"></div>
         <div id="addendaimg" style="padding-bottom:2%"> <img id = "addimg1" src=""><img id = "addimg2" src=""><img id = "addimg3" src="">
         
           
@@ -826,7 +827,7 @@ function fullsizer(clicked){
   let target = document.getElementById("fullsizeimg");
   target.src = filepath;
   
-  
+
 
 
 
@@ -865,6 +866,10 @@ function fullsizer(clicked){
         //console.log("failed: " + temp + " at "+ temp2);
     })
         }
+
+
+
+
 current = current;
 current2 = clicked;
 
@@ -879,13 +884,7 @@ if(window.innerHeight < window.innerWidth){
 
 
 
-$.get(filepath)
-    .done(function() { 
-        // exists code 
-    }).fail(function() { 
-      console.log(target " failed retrieve; " gifreplacer(target) " attempt")
-        target.src=gifreplacer(target);
-    })
+
 
 }
 
