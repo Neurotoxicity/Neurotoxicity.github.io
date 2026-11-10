@@ -808,6 +808,11 @@ var current2 = "NA"
         }
 
 
+function gifreplacer(str){
+ str = (str).slice(0, -4);
+ str=(str).concat(".gif");
+return str;
+}
 
 function fullsizer(clicked){
   if (clicked < 1){
@@ -901,11 +906,6 @@ if(window.innerHeight < window.innerWidth){
 }
 
  
-function gifreplacer(str){
- str = (str).slice(0, -4);
- str=(str).concat(".gif");
-return str;
-}
 
 
 function buttonchoice(choice){
