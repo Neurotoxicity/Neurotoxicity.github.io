@@ -881,7 +881,7 @@ $.get(filepath).done(function(){
     }).fail(function() { 
         console.log("didnt find" + filepath);
         console.log(typeof target);
-        console.log("with" + gifreplacer(String(target)));
+        console.log("with" + gifreplacer(String(filepath)));
         let newpath = gifreplacer(String(filepath));
         target.src= newpath;
         
