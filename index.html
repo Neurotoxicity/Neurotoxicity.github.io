@@ -803,8 +803,14 @@ $(window).on('load', function(){
         
         let linked = window.location.hash;
         let linked2 = linked.charAt(linked.length - 1);
-        buttonchoice(linked2)
-         }
+        let linked3 = linked.charAt(0);
+
+        buttonchoice(linked3)
+        if (linked.length == 2){
+          fullsizer(linked2)
+        }
+        
+        
     });
   });
   
