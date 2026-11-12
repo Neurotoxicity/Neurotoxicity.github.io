@@ -798,14 +798,16 @@ $(window).on('load', function(){
 
       
         //linking specific bits of the site code
-        console.log(window.location.hash)
+        console.log("location hash: " + window.location.hash);
         if (window.location.hash !== ""){
         
+
+          
         let linked = window.location.hash;
         let linked2 = linked.charAt(linked.length - 1);
         let linked3 = linked.charAt(1);
-          console.log(linked3);
-          console.log(linked2);
+          console.log( "location hash last char: " + linked3);
+          console.log("location hash first char: " + linked2);
         buttonchoice(linked3)
 
         if (linked.length == 3){
@@ -821,6 +823,7 @@ $(window).on('load', function(){
 <script>
 var current = "NA"
 var current2 = "NA"
+var current3 = "NA"
 
   function hide() {
             document.getElementById("gallerywrap").style.display = "none";
@@ -899,18 +902,25 @@ function fullsizer(clicked){
 $.get(filepath).done(function(){ 
         // exists code
         
-        console.log("found "+ filepath);
+        //console.log("found "+ filepath);
     }).fail(function() { 
-        console.log("didnt find" + filepath);
-        console.log("replace it with "+ gifpath);
+        //console.log("didnt find" + filepath);
+        //console.log("replace it with "+ gifpath);
         
         target.src= gifpath;
         
-    })
+    });
 
 
 current = current;
 current2 = clicked;
+
+
+
+
+location.hash = (current3.toString() + current2.toString());
+
+//console.log("location.hash = " + location.hash);
 
 (document.getElementById("phonedesc")).style.display = "block";
 (document.getElementById("deskdesc")).style.display = "none";
@@ -935,6 +945,7 @@ function buttonchoice(choice){
 let youclicked = buttonoptions[choice-1];
 prestochango(youclicked);
 current = youclicked;
+current3 = choice;
 location.hash = choice;
 
 }
