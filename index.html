@@ -803,10 +803,12 @@ $(window).on('load', function(){
         
         let linked = window.location.hash;
         let linked2 = linked.charAt(linked.length - 1);
-        let linked3 = linked.charAt(0);
-
+        let linked3 = linked.charAt(1);
+          console.log(linked3);
+          console.log(linked2);
         buttonchoice(linked3)
-        if (linked.length == 2){
+
+        if (linked.length == 3){
           fullsizer(linked2)
         }
       }
