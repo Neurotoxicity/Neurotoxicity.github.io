@@ -467,12 +467,13 @@ button:focus {
 .button-four {
   background-color: #cccccc;
   text-align: justify;
-  font-size: 1em;
+  
   display: block;
   word-break:break-all;
   height: 4vh;
   width: 4vh;
-  
+  font-size:1.5vh;
+  line-height:70%;
   border-radius: 5px;
   border: 2px solid #000000;
   margin: 0.1vh;
@@ -573,7 +574,7 @@ from {
 <!-- this is the lefthand column that doesnt change -->
   <div class="leftcolumn">
       <div class="navibox">
-          <img  src="logos/sommwhite.png" onClick="prestochango('NA')"style="width:80%">
+          <img  src="logos/sommwhite.png" onClick="buttonchoice('NA')"style="width:80%">
           
       
       <div style="width:80%; margin-left: 10%; margin-right: 10%; display:flex; flex-direction: row; flex-wrap:wrap;">
@@ -703,12 +704,12 @@ from {
           <div class = "aboutjobs"><div class="aboutjobstitle" style="padding-top:10%"><br><b>Reach out!</b>
 
         <div style="display:flex; flex-direction: row; flex-wrap:wrap; width:100%">
-        <button class="button-four" style = "width:8.2vh" onclick="window.open('mailto:cal.neurotoxin@gmail.com')">email!</button>
+        <button class="button-four" style = "width:8.2vh; font-size:2vh" onclick="window.open('mailto:cal.neurotoxin@gmail.com')">email!</button>
         <button class="button-four" onclick=" window.open('https://discord.com/users/268488560485728266', '_blank'); return false;">discord</button>
         <button class="button-four" onclick=" window.open('https://www.instagram.com/strangerz0ne/', '_blank'); return false;">insta</button>
-        <button class="button-four" onclick=" window.open('https://www.x.com/strangerz0ne', '_blank'); return false;">twt</button>
-        <button class="button-four" onclick=" window.open('https://bsky.app/profile/neurotoxicity.bsky.social', '_blank'); return false;">bsky</button>
-        <button class="button-four" onclick=" window.open('https://neurotoxicity.itch.io/', '_blank'); return false;">itch</button>
+        <button class="button-four" onclick=" window.open('https://www.x.com/strangerz0ne', '_blank'); return false;">twitter</button>
+        <button class="button-four" onclick=" window.open('https://bsky.app/profile/neurotoxicity.bsky.social', '_blank'); return false;">bluesky</button>
+        <button class="button-four" onclick=" window.open('https://neurotoxicity.itch.io/', '_blank'); return false;">itch.io</button>
         <button class="button-four" onclick=" window.open('https://neurotoxicity.artstation.com/', '_blank'); return false;">artstation</button>
         <button class="button-four" onclick=" window.open('https://www.inprnt.com/gallery/strangerz0ne/', '_blank'); return false;">inprnt</button>
         
@@ -946,6 +947,11 @@ if(window.innerHeight < window.innerWidth){
 
 
 function buttonchoice(choice){
+  if (choice == "NA"){
+    location.hash = "";
+    prestochango(choice);
+    return
+  }
   const buttonoptions = ["Illustration", "Character_Art", "Environment_Art", "Prop_Art", "Pixel_Art", "blog", "about"];
 let youclicked = buttonoptions[choice-1];
 prestochango(youclicked);
