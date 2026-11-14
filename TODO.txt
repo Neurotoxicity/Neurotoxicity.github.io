@@ -1,13 +1,14 @@
 TODO
--direct link page so people can link specific pieces
--forward/backward buttons on hte fullsize view so you dont gotta go back to the gallery every time
--finish implementing the addenda images to go under the fullsize pieces
--put some kind of decoration on the landing page thing
--maybe horizontally scrolling thumbnails?
+-direct link page so people can link specific pieces (done except for blog)
+-forward/backward buttons on hte fullsize view so you dont gotta go back to the gallery every time (done)
+-finish implementing the addenda images to go under the fullsize pieces (done)
+-put some kind of decoration on the landing page thing (done)
+-figure out a way to make the fullsize view image loading filetype agnostic so I don't have to hardcode every time I wanna show a gif or something (just made it pull a gif if the jpg 404s)
+-figure out a layout for phone screens that doesnt look like total shit (done)
+
+-maybe horizontally scrolling thumbnails? 
 -fill out the props section
 -fill out the pixel section, too
--figure out a way to make the fullsize view image loading filetype agnostic so I don't have to hardcode every time I wanna show a gif or something
--put a webring section under the posts list on the blog view
+-put a webring section under the posts list on the blog view (maybe i should put this under about instead?)
 -find a better font than courier new. maybe some y2k lookin pixel font would be nice
 -make prettier buttons for the sidebar. Im  attracted to the style of the 5inch.com navbar... maybe something like that...
--figure out a layout for phone screens that doesnt look like total shit

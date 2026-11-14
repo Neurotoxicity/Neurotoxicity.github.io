@@ -57,6 +57,9 @@ body {
  
   .navibox {
   float: left;
+  padding-right:0.1%;
+  padding-left:0.1%;
+  align-content: center;
   width: 100%;
   display:flex;
   flex-direction: column;
@@ -574,10 +577,10 @@ from {
 <!-- this is the lefthand column that doesnt change -->
   <div class="leftcolumn">
       <div class="navibox">
-          <img  src="logos/sommwhite.png" onClick="buttonchoice('NA')"style="width:80%">
+          <img  src="logos/sommwhite.png" onClick="buttonchoice('NA')"style="width:80%; align-content: center;">
           
-      
-      <div style="width:80%; margin-left: 10%; margin-right: 10%; display:flex; flex-direction: row; flex-wrap:wrap;">
+      <a href="mailto:cal.neurotoxin@gmail.com" style="color: #000000; text-decoration: none; display:block; text-align: center;"><b style="padding-right:0.1%; padding-left:0.1%; align-content: center;"><br>cal.neurotoxin@gmail.com<br></b>  </a>
+      <br><br><div style="width:80%; margin-left: 10%; margin-right: 10%; display:flex; flex-direction: row; flex-wrap:wrap;">
         
         <button class="button-three" onClick="buttonchoice(1)">ILLUSTRATION</button>
         <button class="button-three" onClick="buttonchoice(2)">CHARACTER_ART</button>
@@ -590,14 +593,15 @@ from {
 
         <div class=center>Latest Updates</div>
         <div class = "blogpostslist" id="bloglist"></div><br>
-        <a href="mailto:cal.neurotoxin@gmail.com" style="color: #000000; text-decoration: none;"><b>Contact: cal.neurotoxin@gmail.com</b>  </a>
+        
         
         
       </div>
 
     <div class="blogcolumn" id="blogcolumn">
     
-        This is some selected work from me, Calliope Parsch. Contact me for freelance work, I'll work hard for the money.
+        This is some selected work from me, Calliope Parsch. I am a freelance artist based in Melbourne, Australia.<br>
+        Reach out and lets discuss your project!
           
  
         
@@ -689,6 +693,19 @@ from {
         <div class = "blogviewright">
           <div style ="margin-left:1%; font-size: 10vw;">Blog</div>
            <div id="bloglist2" style="overflow-y:scroll; word-break: break-all; -ms-overflow-style: none; white-space: pre-wrap; scrollbar-width: none;height: 100%; width: 80.00%; margin-left:5%"></div>
+
+
+           <div id="webring">  <!--
+            just dumping stuff for the webring here...
+
+            kindling press: https://kindling.press/
+            pckgmeat: shrimp.crd.co
+            ghostfruits: http://ghostfruits.com/
+            claymore: https://mbgowatbmf.bearblog.dev/
+            alco: ramheadedgirl.com
+            fai: https://store.steampowered.com/app/1622230/Meanderer/ or https://x.com/TheFaiao idk
+ -->
+          </div>
         </div>
 
       </div>
@@ -701,7 +718,9 @@ from {
         </div>
         <div class = "aboutpagemiddle">
           
-          <div class = "aboutjobs"><div class="aboutjobstitle" style="padding-top:10%"><br><b>Reach out!</b>
+          <div class="aboutjobs"> <div class = "aboutjobstitle" style="padding-top:5%"> <b>Calliope Parsch</b></div> 
+          <div><br>Freelance Artist<br>Melbourne, Australia<br><br>Past Clients: Rubeki Games, Only By Midnight, Creature.Love, Putrid/Sharp</div></div>
+          <div class = "aboutjobs" style="width:10vw; flex: 0 0 10vw;"><div class="aboutjobstitle" style="padding-top:10%"><br><b>Reach out!</b>
 
         <div style="display:flex; flex-direction: row; flex-wrap:wrap; width:100%">
         <button class="button-four" style = "width:8.2vh; font-size:2vh" onclick="window.open('mailto:cal.neurotoxin@gmail.com')">email!</button>
@@ -723,7 +742,7 @@ from {
       </div>
 
 
-        </div><br><br><br>Past Clients: Rubeki Games, Only By Midnight, Creature.Love, Putrid//Sharp</div>
+        </div></div>
 
           <div class = "aboutjobs"><img class="aboutjobsgif" src="logos/running for website.gif"><div class="aboutjobstitle">Concept / Pixel artist</div><br><div onclick="window.open('https://creature.love/')"> Creature.Love</div><br> feb2026-current</div>
           <div class = "aboutjobs"><img class="aboutjobsgif" src="logos/squirmer.gif"><div class="aboutjobstitle">Environment / Pixel artist</div><br><div onclick="window.open('https://putridsharp.cargo.site/')"> Putrid/Sharp</div><br> jan2026-current</div>
@@ -852,6 +871,7 @@ function fullsizer(clicked){
   }
   var T = document.getElementById("gallerywrap");
         T.style.display = "none";
+        
   
 
   let filepath = (((("fullsize/").concat(current)).concat("/")).concat(clicked)).concat(".jpg");
@@ -875,8 +895,7 @@ function fullsizer(clicked){
        document.getElementById('descalsohere').innerText = data)
 
 
-  var I = document.getElementById("galleryfullsizewrap");
-        I.style.display = "flex";
+  
 
   current2 = clicked;
 
@@ -917,7 +936,9 @@ $.get(filepath).done(function(){
         
     });
 
-
+var I = document.getElementById("galleryfullsizewrap");
+        I.style.display = "flex";
+        I.scrollTop = 0;
 current = current;
 current2 = clicked;
 
