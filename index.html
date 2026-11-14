@@ -665,7 +665,7 @@ from {
         <div id="phonedesc" style="text-align:center"><button class="button-three" style="height: 4vh; width: 20vw; display:inline-block" onClick="fullsizer(current2-1)">&lt;-</button><b style="font-size:2vw;"onClick="buttonchoice(current3)">(return)</b><button class="button-three" style="height: 4vh; width: 20vw; display:inline-block;" onClick="fullsizer(current2+1)">-&gt;</button>
           <div id="descalsohere" style = "word-break: break-word; font-size:2vh;">img desc</div></div>
         <div><img id= "fullsizeimg" src="logos/expand.png" onerror="this.onerror=null;"></div>
-        <div id="addendaimg" style="padding-bottom:2%"> <img id = "addimg1" src=""><img id = "addimg2" src=""><img id = "addimg3" src="">
+        <div id="addendaimg" style="padding-bottom:2%"> <img id = "addimg1" src="" style="padding-bottom:2%"><img id = "addimg2" src="" style="padding-bottom:2%"><img id = "addimg3" src="" style="padding-bottom:2%">
         
           
       </div>
@@ -939,6 +939,7 @@ $.get(filepath).done(function(){
 var I = document.getElementById("galleryfullsizewrap");
         I.style.display = "flex";
         I.scrollTop = 0;
+
 current = current;
 current2 = clicked;
 
