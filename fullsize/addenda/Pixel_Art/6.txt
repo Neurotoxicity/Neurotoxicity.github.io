@@ -1,3 +1,4 @@
-[Placeholder Title]
-[20XX]
-[Placeholder Body]
+Forest Assets
+2026
+Tileset and decorations for the forest level of an unannounced platformer from Creature.Love.
+The forest is supposed to be secretly playing with people's minds, which I tried to express by having the floor tiles have weird perspective. It's a mix of "deep shadows" and "fake perspective". The final game is going to have a bunch of atmospheric overlays over the background stuff, but for now just look at the pixels unfiltered.
