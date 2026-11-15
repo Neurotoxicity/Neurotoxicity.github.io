@@ -65,7 +65,7 @@ body {
   display:flex;
   flex-direction: column;
   border-bottom:2px solid black;
-  
+  background-image: url('logos/bg.jpg') center center no-repeat;
   /*background-image: url("logos/bg.jpg");*/
   
  }
@@ -457,7 +457,8 @@ button:focus {
 .button-three {
   background-color: #cccccc;
   text-align: justify;
-  font-size: 2vh;
+  font-size: (5px+ 2vw);
+  line-height: 90%;
   display: block;
   word-break:break-all;
   height: 8vh;
@@ -585,7 +586,9 @@ from {
       <a href="mailto:cal.neurotoxin@gmail.com" style="color: #000000; text-decoration: none; display:block; text-align: center; margin-bottom: 1%; padding-right: 2%;"><b><br>cal.neurotoxin@gmail.com<br></b>  </a>
       <br><br>
       
+      <div style="width:80%; margin-left: 10%; margin-right: 10%; display:flex; justify-content: left; flex-direction: row; flex-wrap:wrap;"><button class="button-three" onClick="window.open('logos/Calliope_Parsch_Neurotoxin_Sommelier.jpg')" style = "width:16.2vh; height:4vh">1_IMAGE_FOLIO_JPG</button></div>
       <div style="width:80%; margin-left: 10%; margin-right: 10%; display:flex; align-items:center;   justify-content: center; flex-direction: row; flex-wrap:wrap;">
+        
         
         <button class="button-three" onClick="buttonchoice(1)">ILLUSTRATION___</button>
         <button class="button-three" onClick="buttonchoice(2)">CHARACTER_ART__</button>
@@ -668,7 +671,7 @@ from {
       <div class = "galleryfullsizewrap" id = "galleryfullsizewrap">
       <div class = "galleryviewfullsizemiddle" id="galleryfullsizemiddle" style= "overflow-y:scroll; scrollbar-width: none;">
         
-        <div id="phonedesc" style="text-align:center"><button class="button-three" style="height: 4vh; width: 20vw; display:inline-block" onClick="fullsizer(current2-1)">&lt;-</button><b style="font-size:2vw;"onClick="buttonchoice(current3)">(return)</b><button class="button-three" style="height: 4vh; width: 20vw; display:inline-block;" onClick="fullsizer(current2+1)">-&gt;</button>
+        <div id="phonedesc" style="text-align:center"><button class="button-three" style="height: 4vh; width: 20vw; display:inline-block" onClick="fullsizer(current2-1)">&lt;==</button><b style="font-size:2vw;"onClick="buttonchoice(current3)">(return)</b><button class="button-three" style="height: 4vh; width: 20vw; display:inline-block;" onClick="fullsizer(current2+1)">==&gt;</button>
           <div id="descalsohere" style = "word-break: break-word; font-size:2vh;">img desc</div></div>
           
         <div><img id= "fullsizeimg" src="logos/expand.png" onerror="this.onerror=null;" style="padding-bottom:1%"></div>
@@ -677,7 +680,7 @@ from {
           <img id = "addimg2" src="" style="padding-bottom:1%">
           <img id = "addimg3" src="" style="padding-bottom:1%">
         </div>
-        <div style="display:block; text-align: center;"><button class="button-three" style="height: 4vh; width: 20vw; display:inline-block" onClick="fullsizer(current2-1)">&lt;-</button><b style="font-size:2vw;"onClick="buttonchoice(current3)">(return)</b><button class="button-three" style="height: 4vh; width: 20vw; display:inline-block;" onClick="fullsizer(current2+1)">-&gt;</button></div>
+        <div style="display:block; text-align: center;"><button class="button-three" style="height: 4vh; width: 20vw; display:inline-block" onClick="fullsizer(current2-1)">&lt;==</button><b style="font-size:2vw;"onClick="buttonchoice(current3)">(return)</b><button class="button-three" style="height: 4vh; width: 20vw; display:inline-block;" onClick="fullsizer(current2+1)">==&gt;</button></div>
 
       </div>
       <div class = "galleryviewfullsizeright" id="deskdesc" ><div style="font-size: 8vw; line-height: 0.7; word-break: break-all;">Fullsize</div>
