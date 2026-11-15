@@ -579,8 +579,10 @@ from {
       <div class="navibox">
           <img  src="logos/sommwhite.png" onClick="buttonchoice('NA')"style="width:80%; align-content: center;">
           
-      <a href="mailto:cal.neurotoxin@gmail.com" style="color: #000000; text-decoration: none; display:block; text-align: center;"><b style="padding-right:0.1%; padding-left:0.1%; align-content: center;"><br>cal.neurotoxin@gmail.com<br></b>  </a>
-      <br><br><div style="width:80%; margin-left: 10%; margin-right: 10%; display:flex; flex-direction: row; flex-wrap:wrap;">
+      <a href="mailto:cal.neurotoxin@gmail.com" style="color: #000000; text-decoration: none; display:block; text-align: center; margin-bottom: 1%;"><b><br>cal.neurotoxin@gmail.com<br></b>  </a>
+      <br><br>
+      
+      <div style="width:80%; margin-left: 10%; margin-right: 10%; display:flex; flex-direction: row; flex-wrap:wrap;">
         
         <button class="button-three" onClick="buttonchoice(1)">ILLUSTRATION</button>
         <button class="button-three" onClick="buttonchoice(2)">CHARACTER_ART</button>
@@ -908,8 +910,9 @@ function fullsizer(clicked){
    let betty = ["a","b","c"];
 
   for (let p = 0; p < 3; p++){
-          let temp = ((addendapath).concat(betty[p])).concat(".jpg")
-          let temp2 = ("addimg").concat(p+1)
+          let temp = ((addendapath).concat(betty[p])).concat(".jpg");
+          let giftemp = ((addendapath).concat(betty[p])).concat(".gif");
+          let temp2 = ("addimg").concat(p+1);
           $.get(temp).done(function(){ 
         // exists code
         
@@ -920,8 +923,21 @@ function fullsizer(clicked){
     }).fail(function() { 
         // not exists code
         //console.log("attempt: " + temp + " at "+ temp2);
+
+        //if it fails to retrive addenda, check if theres a gif filetype one
+        $.get(giftemp).done(function(){ 
+        // exists code
+        
+        document.getElementById(temp2).src= giftemp;
+        document.getElementById(temp2).style.display= "flex";
+           }).fail(function() { 
+        
         document.getElementById(temp2).src= "";
         document.getElementById(temp2).style.display= "none";
+        
+              });
+
+        
         //console.log("failed: " + temp + " at "+ temp2);
     })
         }
