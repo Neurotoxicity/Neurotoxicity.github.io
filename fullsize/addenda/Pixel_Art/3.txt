@@ -1,3 +1,3 @@
 Character Animations
 2026
-A suite of character animations I made for an unannounced platformer project from Creature.Love. 
+A suite of character animations I made for an unannounced platformer project from Creature.Love. Sprites are 32x32, although the character takes up less than that... needed to leave room for it to thrash around a bit. The game is intended to be slow paced, with a weighty, awkward character controller, so the animations reflect that.
