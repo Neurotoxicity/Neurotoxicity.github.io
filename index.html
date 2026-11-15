@@ -34,14 +34,16 @@ body {
   float: left;
   width: 20vw;
   height: 100vh;
-  left: 0px;
-  border-right:2px solid black;
+  
+  
   padding-bottom: 1%;
+  
   min-width: 100px;
   display:flex;
   flex-direction: column;
   word-break:break-word;
   font-size: calc(10px + 0.4vw);
+  border-right:2px solid black;
   
   
  }
@@ -56,21 +58,21 @@ body {
 
  
   .navibox {
-  float: left;
-  padding-right:0.1%;
-  padding-left:0.1%;
-  align-content: center;
+  
+  justify-content: center;
+  align-items: center;
   width: 100%;
   display:flex;
   flex-direction: column;
+  border-bottom:2px solid black;
+  
   /*background-image: url("logos/bg.jpg");*/
   
  }
 
  .blogcolumn {
-  border-top:2px solid black; 
-  float: left;
   
+  float: left;
   display:flex;
   word-break:break-word;
   font-size: calc(10px + 0.4vw);
@@ -580,10 +582,10 @@ from {
       <div class="navibox">
           <img  src="logos/sommwhite.png" onClick="buttonchoice('NA')"style="width:80%; align-content: center;">
           
-      <a href="mailto:cal.neurotoxin@gmail.com" style="color: #000000; text-decoration: none; display:block; text-align: center; margin-bottom: 1%;"><b><br>cal.neurotoxin@gmail.com<br></b>  </a>
+      <a href="mailto:cal.neurotoxin@gmail.com" style="color: #000000; text-decoration: none; display:block; text-align: center; margin-bottom: 1%; padding-right: 2%;"><b><br>cal.neurotoxin@gmail.com<br></b>  </a>
       <br><br>
       
-      <div style="width:80%; margin-left: 10%; margin-right: 10%; display:flex; flex-direction: row; flex-wrap:wrap;">
+      <div style="width:80%; margin-left: 10%; margin-right: 10%; display:flex; align-items:center;   justify-content: center; flex-direction: row; flex-wrap:wrap;">
         
         <button class="button-three" onClick="buttonchoice(1)">ILLUSTRATION___</button>
         <button class="button-three" onClick="buttonchoice(2)">CHARACTER_ART__</button>
@@ -595,7 +597,7 @@ from {
         </div>
 
         <div class=center>Latest Updates</div>
-        <div class = "blogpostslist" id="bloglist"></div><br>
+        <div class = "blogpostslist" id="bloglist"></div><br><br>
         
         
         
@@ -726,21 +728,21 @@ from {
           
           <div class="aboutjobs"> <div class = "aboutjobstitle" style="padding-top:5%"> <b>Calliope Parsch</b></div> 
           <div><br>Freelance Artist<br>Melbourne, Australia<br><br>Past Clients: Rubeki Games, Only By Midnight, Creature.Love, Putrid/Sharp</div></div>
-          <div class = "aboutjobs" style="width:10vw; flex: 0 0 10vw;"><div class="aboutjobstitle" style="padding-top:10%"><br><b>Reach out!</b>
+          <div class = "aboutjobs" style="width:10vw; flex: 0 0 10vw; justify-content: center;"><div class="aboutjobstitle" style="padding-top:10%"><br><b>Reach out!</b>
 
-        <div style="display:flex; flex-direction: row; flex-wrap:wrap; width:100%">
+        <div style="display:flex; flex-direction: row; flex-wrap:wrap; width:100%;">
         <button class="button-four" style = "width:8.2vh; font-size:2vh" onclick="window.open('mailto:cal.neurotoxin@gmail.com')">email!</button>
-        <button class="button-four" onclick=" window.open('https://discord.com/users/268488560485728266', '_blank'); return false;">discord</button>
-        <button class="button-four" onclick=" window.open('https://www.instagram.com/strangerz0ne/', '_blank'); return false;">insta</button>
-        <button class="button-four" onclick=" window.open('https://www.x.com/strangerz0ne', '_blank'); return false;">twitter</button>
-        <button class="button-four" onclick=" window.open('https://bsky.app/profile/neurotoxicity.bsky.social', '_blank'); return false;">bluesky</button>
-        <button class="button-four" onclick=" window.open('https://neurotoxicity.itch.io/', '_blank'); return false;">itch.io</button>
-        <button class="button-four" onclick=" window.open('https://neurotoxicity.artstation.com/', '_blank'); return false;">artstation</button>
-        <button class="button-four" onclick=" window.open('https://www.inprnt.com/gallery/strangerz0ne/', '_blank'); return false;">inprnt</button>
+        <button class="button-four" onclick=" window.open('https://discord.com/users/268488560485728266', '_blank'); return false;"><img src="logos/socmed link logos/discord.png"></button>
+        <button class="button-four" onclick=" window.open('https://www.instagram.com/strangerz0ne/', '_blank'); return false;"><img src="logos/socmed link logos/insta.png"></button>
+        <button class="button-four" onclick=" window.open('https://www.x.com/strangerz0ne', '_blank'); return false;"><img src="logos/socmed link logos/twitter.png"></button>
+        <button class="button-four" onclick=" window.open('https://bsky.app/profile/neurotoxicity.bsky.social', '_blank'); return false;"><img src="logos/socmed link logos/bsky.png"></button>
+        <button class="button-four" onclick=" window.open('https://neurotoxicity.itch.io/', '_blank'); return false;"><img src="logos/socmed link logos/itch.png"></button>
+        <button class="button-four" onclick=" window.open('https://neurotoxicity.artstation.com/', '_blank'); return false;"><img src="logos/socmed link logos/artstation.png"></button>
+        <button class="button-four" onclick=" window.open('https://www.inprnt.com/gallery/strangerz0ne/', '_blank'); return false;"><img src="logos/socmed link logos/inprnt.png"></button>
         
-        <!--uncomment this once i get a vgen code or whatevs
-         <button class="button-four" onclick=" window.open('https://vgen.co/Neurotoxicity', '_blank'); return false;">vgen</button>-->
-        <button class="button-four" onclick=" window.open('https://www.linkedin.com/in/calparsch/', '_blank'); return false;">Linkedin</button>
+        
+         <button class="button-four" onclick=" window.open('https://vgen.co/Neurotoxicity', '_blank'); return false;"><img src="logos/socmed link logos/vgen.png"></button>
+        <button class="button-four" onclick=" window.open('https://www.linkedin.com/in/calparsch/', '_blank'); return false;"><img src="logos/socmed link logos/linkedin.png"></button>
 
 
         
