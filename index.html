@@ -586,17 +586,19 @@ from {
       <a href="mailto:cal.neurotoxin@gmail.com" style="color: #000000; text-decoration: none; display:block; text-align: center; margin-bottom: 1%; padding-right: 2%;"><b><br>cal.neurotoxin@gmail.com<br></b>  </a>
       <br><br>
       
-      <div style="width:80%; margin-left: 10%; margin-right: 10%; display:flex; justify-content: left; flex-direction: row; flex-wrap:wrap;"><button class="button-three" onClick="window.open('logos/Calliope_Parsch_Neurotoxin_Sommelier.jpg')" style = "width:16.2vh; height:4vh"><img src="logos/button icons/folio.png"></button></div>
+      <div style="width:80%; margin-left: 10%; margin-right: 10%; display:flex; justify-content: left; flex-direction: row; flex-wrap:wrap;"><button class="button-three" onClick="window.open('logos/Calliope_Parsch_Neurotoxin_Sommelier.jpg')" style = "width:16.2vh; height:4vh; background-image:url('logos/bg.jpg');"><img src="logos/button icons/folio.png"></button></div>
       <div style="width:80%; margin-left: 10%; margin-right: 10%; display:flex; align-items:center;   justify-content: center; flex-direction: row; flex-wrap:wrap;">
         
+        <button class="button-three" onClick="buttonchoice(1)" style="background-image: url('logos/button icons/illustration.png'); background-size:cover;"></button>
+        <button class="button-three" onClick="buttonchoice(2)" style="background-image:url('logos/button icons/character.png'); background-size:cover;"></button>
+        <button class="button-three" onClick="buttonchoice(5)" style="background-image:url('logos/button icons/pixel.png'); background-size:cover;"></button> 
+        <button class="button-three" onClick="buttonchoice(3)" style="background-image:url('logos/button icons/environment.png'); background-size:cover;"></button>
         
-        <button class="button-three" onClick="buttonchoice(1)"><img src="logos/button icons/illustration.png"></button>
-        <button class="button-three" onClick="buttonchoice(2)"><img src="logos/button icons/character.png"></button>
-        <button class="button-three" onClick="buttonchoice(3)"><img src="logos/button icons/environment.png"></button>
-        <!--<button class="button-three" onClick="buttonchoice(4)"><img src="logos/button icons/props.png"></button>-->
-        <button class="button-three" onClick="buttonchoice(5)"><img src="logos/button icons/pixel.png"></button> 
-        <!-- <button class="button-three" onClick="buttonchoice(6)">BLOG</button> -->
-        <button class="button-three" onClick="buttonchoice(7)" style = "width:16.2vh"><img src="logos/button icons/contact.png"></button> 
+        <!--blog button redundant given theres a blogfeed scroll riught under it. props button hidden cuz that section is totally empty rn-->
+        <!--<button class="button-three" onClick="buttonchoice(4)" style="background-image:url('logos/button icons/props.png'); background-size:cover;"></button>
+         <button class="button-three" onClick="buttonchoice(6)" style="background-image:url('logos/button icons/blog.png'); background-size:cover;"></button>-->
+
+        <button class="button-three" onClick="buttonchoice(7)" style = "width:16.2vh; background-image:url('logos/button icons/contact.png'), url('logos/bg.jpg'); background-size:cover, auto;" ></button> 
         </div>
 
         <div class=center>Latest Updates</div>
@@ -787,7 +789,7 @@ from {
 <script type="text/javascript">
 
 
-const blogpostno = 1
+const blogpostno = 2
 
 
 $(window).on('load', function(){
