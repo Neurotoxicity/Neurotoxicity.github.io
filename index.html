@@ -254,6 +254,7 @@ body {
   border-right:2px solid black;
   left: 2%;
   overflow-y:auto;
+  scrollbar-width: none;
   min-height:30vh;
   height:auto;
   
@@ -553,18 +554,20 @@ from {
 			}
 }
 
-.marquee {
+.asciianim {
       height:70%;
 			display: flex ;
 			overflow: hidden ;
 			font-size:1em;
-			width: 100%;
+			width: max-content;
 		}
-		.marquee__item {
-			animation-duration: 30s ;
+		.asciianim_item {
+			animation-duration: 20s ;
 			animation-iteration-count: infinite ;
 			animation-name: marquee-content ;
 			animation-timing-function: linear ;
+      display:flex;
+      
 			
 		}
 		
@@ -637,7 +640,7 @@ from {
     <div class="blogcolumn" id="blogcolumn">
     
         This is some selected work from me, Calliope Parsch. I am a freelance artist based in Melbourne, Australia.<br>
-        I'm available for work, so reach out and lets discuss your project!
+        I'm available for work, so reach out! Lets discuss your project!
           
  
         
@@ -652,15 +655,16 @@ from {
   <div class="rightchunk"> 
     <!-- what displays in here needs to change depending on which navigation button is pressed-->
     
-    <div class="marquee" id="asciidiv">
-		<div class="marquee__item" style="font-size: 13px; width:100%;  bottom:-50%">
+    <div class="asciianim" id="asciidiv">
+		<div class="asciianim_item" style="font-size: 13px;  bottom:-50%;">
 			              <pre><div id="ascii1a"></div></pre>                                                                                                                                                                                                                                                                                                       
                                                                                                                                                                                                                                                                                                                         
 
 		</div>
-		<div class="marquee__item" style="font-size: 13px; width:100%; bottom:-50%">
+		<div class="asciianim_item" style="font-size: 13px; bottom:-50%;">
 			                <pre><div id="ascii1b"></div></pre>
 		</div>
+
     <div style="object-fit:cover; overflow:clip; width:20vw;">
     <div class="landingmask" style="position: absolute; top:40vh;  right:1%; width:80vw; height:100%;">
     <img class="landingwalk" src="logos/landing.png" style="right:1%; height:20vw; width:80vw"></div></div>
@@ -753,18 +757,18 @@ from {
 
 
       <div class = "aboutwrap" id="aboutwrap">
-        <div class = "aboutpagetop">
+        <div class = "aboutpagetop" id="aboutpagetop">
           
         </div>
-        <div class = "aboutpagemiddle">
+        <div class = "aboutpagemiddle" id="aboutpagemiddle">
           
           <div class="aboutjobs"> <div class = "aboutjobstitle" style="padding-top:5%"> <b>Calliope Parsch</b></div> 
           <div><br>Freelance Artist<br>Melbourne, Australia<br><br>Past Clients: Rubeki Games, Only By Midnight, Creature.Love, Putrid/Sharp</div></div>
           <div class = "aboutjobs" style="width:10vw; flex: 0 0 10vw; justify-content: center;"><div class="aboutjobstitle" style="padding-top:10%"><br><b>Reach out!</b>
 
         <div style="display:flex; flex-direction: row; flex-wrap:wrap; width:100%;">
-        <button class="button-four" style = "width:8.2vh; font-size:2vh" onclick="window.open('mailto:cal.neurotoxin@gmail.com')" style="object-fit:fill;"><img src="logos/socmed link logos/email.png" style="object-fit:fill;"></button>
-        <button class="button-four" onclick=" window.open('https://discord.com/users/268488560485728266', '_blank'); return false;"><img src="logos/socmed link logos/discord.png"></button>
+        <button class="button-four" style = "width:8.2vh; font-size:2vh; object-fit:fill; background-image:url('logos/bg.jpg')" onclick="window.open('mailto:cal.neurotoxin@gmail.com')"><img src="logos/socmed link logos/email.png" style="width:100%; height:100%"></button>
+        <button class="button-four" onclick=" window.open('https://discord.com/users/268488560485728266', '_blank'); return false;" ><img src="logos/socmed link logos/discord.png"></button>
         <button class="button-four" onclick=" window.open('https://www.instagram.com/strangerz0ne/', '_blank'); return false;"><img src="logos/socmed link logos/insta.png"></button>
         <button class="button-four" onclick=" window.open('https://www.x.com/strangerz0ne', '_blank'); return false;"><img src="logos/socmed link logos/twitter.png"></button>
         <button class="button-four" onclick=" window.open('https://bsky.app/profile/neurotoxicity.bsky.social', '_blank'); return false;"><img src="logos/socmed link logos/bsky.png"></button>
@@ -774,6 +778,7 @@ from {
         
         
          <button class="button-four" onclick=" window.open('https://vgen.co/Neurotoxicity', '_blank'); return false;"><img src="logos/socmed link logos/vgen.png"></button>
+         <button class="button-four" onclick=" window.open('https://www.tumblr.com/blog/neurotoxizity', '_blank'); return false;"><img src="logos/socmed link logos/tumblr.png"></button>
         <button class="button-four" onclick=" window.open('https://www.linkedin.com/in/calparsch/', '_blank'); return false;"><img src="logos/socmed link logos/linkedin.png"></button>
 
 
@@ -808,7 +813,7 @@ from {
 
   
   
-<div style="height:5vh"></div>
+
 
 
 </body>
@@ -826,6 +831,14 @@ $(window).on('load', function(){
   
   $(document).ready(function(){   
     
+    //makes the content space on aboutpage way taller if youre on phone
+    (document.getElementById("aboutpagetop")).style.height = "0vh";
+    (document.getElementById("aboutpagemiddle")).style.height = "70vh";
+    if(window.innerHeight < window.innerWidth){
+        (document.getElementById("aboutpagemiddle")).style.height = "30vh";
+        (document.getElementById("aboutpagetop")).style.height = "45vh";}
+
+
     $.get("logos/ascii1.txt", function(data){
       $("#ascii1a").append(data);
       $("#ascii1b").append(data);
@@ -1005,11 +1018,18 @@ location.hash = (current3.toString() + current2.toString());
 
 //console.log("location.hash = " + location.hash);
 
+//stuff for layout changes if its on phone
 (document.getElementById("phonedesc")).style.display = "block";
 (document.getElementById("deskdesc")).style.display = "none";
+
 if(window.innerHeight < window.innerWidth){
     (document.getElementById("phonedesc")).style.display = "none";
     (document.getElementById("deskdesc")).style.display = "block";
+    
+
+    
+
+
         }
 
 
