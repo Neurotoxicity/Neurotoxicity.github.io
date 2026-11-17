@@ -156,8 +156,34 @@ body {
     border-radius: 25px;
     object-fit: cover;
     display: flex;
+    position:relative;
  }
-
+ .imagecard{
+    float: left;
+    width: 15vw;
+    height: 25vh;
+    margin: 1%;
+    border-radius: 25px;
+    object-fit: cover;
+    display: flex;
+    position:relative;
+ }
+.expandlogo{
+       display:none;
+       position:absolute;
+       width:2vw;
+       height:2vw;
+       top:5%;
+       right:5%;
+       background-image: url('logos/expand.png');
+       background-size: contain;
+       filter: url(#noise);
+       
+       
+   }
+.imagecard:hover > .expandlogo {
+       display : block;
+   }
 .galleryviewfullsizemiddle{
   width:65vw;
   height:99vh;
@@ -467,9 +493,14 @@ button:focus {
   border-radius: 5px;
   border: 2px solid #000000;
   margin: 0.1vh;
-  
-  
 }
+.button-three:hover{
+    display: block;
+    
+    animation: shake 0.8s linear infinite;
+        }
+
+                  
 .button-four {
   background-color: #cccccc;
   text-align: justify;
@@ -548,12 +579,7 @@ from {
 		}
 
 
-     .expandlogo{
-       display : none;
-   }
-   imagecard:hover ~ .expandlogo {
-       display : block;
-   }
+     
 </style>
 <script>src="/js/jquery-4.0.0.min.js"</script>
 
@@ -658,14 +684,15 @@ from {
       
       <div class = "galleryviewpicturecontainer">
         <!--remember to write some code so a "click here to expand" icon appears when you mouseover these-->
-        <div class = "imagecard" onClick="fullsizer(1)" ><img   id = "img1" src=""></div>
-        <div class = "imagecard" onClick="fullsizer(2)"><img   id = "img2" src=""></div>
-        <div class = "imagecard" onClick="fullsizer(3)"><img   id = "img3" src=""></div>
-        <div class = "imagecard" onClick="fullsizer(4)"><img   id = "img4" src=""></div>
-        <div class = "imagecard" onClick="fullsizer(5)"><img   id = "img5" src=""></div>
-        <div class = "imagecard" onClick="fullsizer(6)"><img   id = "img6" src=""></div>
-        <div class = "imagecard" onClick="fullsizer(7)"><img   id = "img7" src=""></div>
-        <div class = "imagecard" onClick="fullsizer(8)"><img   id = "img8" src=""></div>
+        
+        <div class = "imagecard" onClick="fullsizer(1)" >   <img id = "img1" src=""> <div class="expandlogo"></div></div>
+        <div class = "imagecard" onClick="fullsizer(2)">  <img   id = "img2" src=""> <div class="expandlogo"></div></div>
+        <div class = "imagecard" onClick="fullsizer(3)"><img   id = "img3" src=""><div class="expandlogo"></div></div>
+        <div class = "imagecard" onClick="fullsizer(4)"><img   id = "img4" src=""><div class="expandlogo"></div></div>
+        <div class = "imagecard" onClick="fullsizer(5)"><img   id = "img5" src=""><div class="expandlogo"></div></div>
+        <div class = "imagecard" onClick="fullsizer(6)"><img   id = "img6" src=""><div class="expandlogo"></div></div>
+        <div class = "imagecard" onClick="fullsizer(7)"><img   id = "img7" src=""><div class="expandlogo"></div></div>
+        <div class = "imagecard" onClick="fullsizer(8)"><img   id = "img8" src=""><div class="expandlogo"></div></div>
         
       </div>
       </div>
