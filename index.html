@@ -627,12 +627,12 @@ from {
     <!-- what displays in here needs to change depending on which navigation button is pressed-->
     
     <div class="marquee" id="asciidiv">
-		<div class="marquee__item" style="font-size: 13px; bottom:-50%">
+		<div class="marquee__item" style="font-size: 13px; width:100%;  bottom:-50%">
 			              <pre><div id="ascii1a"></div></pre>                                                                                                                                                                                                                                                                                                       
                                                                                                                                                                                                                                                                                                                         
 
 		</div>
-		<div class="marquee__item" style="font-size: 13px; bottom:-50%">
+		<div class="marquee__item" style="font-size: 13px; width:100%; bottom:-50%">
 			                <pre><div id="ascii1b"></div></pre>
 		</div>
     <div style="object-fit:cover; overflow:clip; width:20vw;">
@@ -650,7 +650,7 @@ from {
           <div style="left: 0; overflow:hidden; height:100%; z-index: -1; position:absolute;" > <marquee behavior="scroll" scrollamount="15" direction="down" style="font-size: 11px" width="100%" height="100%">                                                                                                                                                                                                                                                                                                                        
                                                              <pre><div  id="ascii2"  margin: 0; ></div></pre>                                                                                                                                                                                                                                                                                                                        
       </marquee></div>
-         <div id="gallerytitle" style="font-size:6vw; position:absolute; bottom: 0; left: 0; height:fit-content; margin-bottom: 1%; margin-left: 2%">
+         <div id="gallerytitle" style="font-size:6vw; position:absolute; bottom: 0; left: 0; height:fit-content; margin-bottom: 1%; margin-left: 2%; background:white;">
           
         No_Gallery_Selected
       </div>
@@ -688,7 +688,7 @@ from {
       <div class = "galleryviewfullsizeright" id="deskdesc" ><div style="font-size: 8vw; line-height: 0.7; word-break: break-all;">Fullsize</div>
       <b style="font-size:2vw;"onClick="buttonchoice(current3)">(return)</b>
       <div ><button class="button-three" style="height: 4vh; width: 40%; display:inline-block" onClick="fullsizer(current2-1)">&lt;-</button><button class="button-three" style="height: 4vh; width: 40%; display:inline-block;" onClick="fullsizer(current2+1)">-&gt;</button></div>
-      <div id="deschere" style = "word-break: break-word">img desc</div>
+      <div id="deschere" style = "word-break: break-word; overflow-y:scroll; scrollbar-width:none;">img desc</div>
       </div></div>
       
       
@@ -781,7 +781,7 @@ from {
 
   
   
-
+<div style="height:5vh"></div>
 
 
 </body>
